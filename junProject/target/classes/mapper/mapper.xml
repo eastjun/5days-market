@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jun.spring.project">
+
+	<select id="boardSelectAll" resultType="BoardDTO" parameterType="BoardDTO">
+		select num, title, content, userid, writeday 
+		from notice Order by num DESC
+	</select>
+	<select id="boardSelect" parameterType="BoardDTO" resultType="BoardDTO">
+		select num, title, content, userid, to_char(writeday, 'yyyy-mm-dd') writeday from notice 
+		where num = #{num}
+	</select>
+	<insert id="boardInsert" parameterType="BoardDTO">
+		 INSERT INTO notice (num, title, content, userid, writeday)
+    	 VALUES (notice_seq.nextval, #{title}, #{content}, #{userid}, SYSDATE)	
+	</insert>
+	<update id="boardUpdate" parameterType="BoardDTO">
+		 update notice set title=#{title}, content=#{content}, userid = userid, writeday = sysdate 
+		 where num=#{num}
+	</update>
+	<delete id="boardDelete" parameterType="BoardDTO">
+		delete from notice
+		where num=#{num}
+	</delete>
+	
+	<select id="memberSelectAll" resultType="MemberDTO" parameterType="MemberDTO">
+		select uniqueid, userid, password, nickname, phonenum, email, birthday
+		from member 
+	</select>
+	
+	<select id="checkID" resultType="MemberDTO" parameterType="java.lang.String">
+		select userid from member 
+		where userid = #{userid}
+	</select>
+
+	<insert id="memberInsert" parameterType="MemberDTO">
+		insert into member (uniqueid, userid, password, nickname, phonenum, email, birthday ) 
+		values (#{uniqueid},#{userid},#{password},#{nickname},#{phonenum},#{email},to_date(#{birthday}, 'yyyy-mm-dd') ) 
+	</insert>
+	
+
+</mapper>
