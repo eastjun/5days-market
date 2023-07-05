@@ -28,7 +28,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="./MainView.do">사이트 명</a>
+			<a class="navbar-brand" href="mainView">사이트 명</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,8 +38,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="./MainView.do">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="/boardSelectAll">Notice</a></li>
+						aria-current="page" href="mainView">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="boardSelectAll">Notice</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -53,12 +53,12 @@
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./MemberLoginView.do">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Sign-upView.do">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="memberInsert">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Logout.do">로그아웃</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./MypageView.do">마이페이지</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./OrderCheckView.do">주문조회</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./CartView.do">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
         <% } %>
@@ -70,7 +70,7 @@
 
 	<!-- Header -->
 	<header class="bg-dark py-5"
-		style="background-image: url('assets/img/home-bg.jpg')">
+		style="background-image: url('resources/assets/img/home-bg.jpg')">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-black">
 				<h1 class="display-4 fw-bolder">공지사항</h1>
@@ -98,7 +98,7 @@
 						    </div>
 								<%if (userid !=null&& uniqueid != null && uniqueid==100001){ %>
 										<div class="mt-3 d-flex justify-content-end">
-									     <a href="boardUpdateView?num=${boardSelect.num}" class="btn btn-primary me-2">수정하기</a>
+									     <a href="boardUpdate?num=${boardSelect.num}" class="btn btn-primary me-2">수정하기</a>
 						                 <a href="boardDelete?num=${boardSelect.num}" class="btn btn-secondary">삭제하기</a>               
 						      </div> 
 						</form>

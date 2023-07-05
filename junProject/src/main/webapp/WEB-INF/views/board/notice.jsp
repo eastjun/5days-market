@@ -57,7 +57,7 @@
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="mainView">Home</a></li>
 					<li class="nav-item">
-						<a class="nav-link" href="/boardSelectAll">Notice</a></li>
+						<a class="nav-link" href="boardSelectAll">Notice</a></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,9 +73,9 @@
 					%>
 					<!-- 로그아웃 상태일 때 -->
 					<li class="nav-item">
-					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="loginView">로그인</a></li>
+					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="login">로그인</a></li>
 					<li class="nav-item">
-					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="memberInsert">회원가입</a></li>
+					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="signup">회원가입</a></li>
 					<%
 						} else {
 					%>
@@ -83,7 +83,7 @@
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="logout">로그아웃</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./MypageView.do">마이페이지</a></li>
+						href="mypage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="./OrderCheckView.do">주문조회</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
@@ -138,7 +138,7 @@
 					if (userid != null && uniqueid != null && uniqueid == 100001) {
 				%>
 				<div class="mt-3 d-flex justify-content-end">
-					<a href="boardInsertView">
+					<a href="boardInsert">
 						<button type="button" class="btn btn-primary">공지 등록</button>
 					</a>
 				</div>
@@ -147,7 +147,6 @@
 				%>
 			</div>
 		</div>
-
 	</section>
 
 

@@ -36,14 +36,12 @@ public class MemberController {
 	 private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	 
 	 @Autowired
-	 private final MemberDAOImp memberDAOImp;
-	 
+	 private final MemberDAOImp memberDAOImp; 
 	 @Autowired
 	 private final MemberServiceImp memberServiceImp;
-	 @Autowired
-	 private BCryptPasswordEncoder bCryptPasswordEncoder;
 	 
-	 @RequestMapping(value = "/loginView")
+	 //로그인 관련
+	 @GetMapping("/login")
 	 public String loginView() {
 		 
 		 return"./member/login";
@@ -51,7 +49,6 @@ public class MemberController {
 	 @PostMapping("/login")
 	 public String login(HttpServletRequest request, HttpServletResponse response, Model model ,MemberDTO memberDTO) {
 		 
-	        
 		 List <MemberDTO> list = memberDAOImp.memberSelectAll();
 		 
 	     boolean loginSuccess = false;
@@ -66,8 +63,7 @@ public class MemberController {
 	                }
 	                break;
 	            }
-	        }
-	     
+	        }     
 	        if (loginSuccess) {
 	            request.getSession().setAttribute("userid", memberDTO.getUserid());
 	            request.getSession().setAttribute("uniqueid", memberDTO.getUniqueid());
@@ -90,7 +86,7 @@ public class MemberController {
 	            return "./member/loginSucceed";
 	        }
 	    }
-	 
+	 //로그아웃 관리
 	 @GetMapping("/logout")
 	 public String logout(HttpServletRequest request, HttpServletResponse response) {
 	
@@ -102,13 +98,12 @@ public class MemberController {
 		    cookie.setMaxAge(0);
 		    cookie.setPath("/");
 		    response.addCookie(cookie);
-		 return"./member/logout";
+		 return"/member/logout";
 	 }
-	 
-	
+	 //회원가입 관련
 	 @GetMapping("/signup")
 	 public String signup() {	 
-		 return"./member/signup";
+		 return"/member/signup";
 	 }
 	 
 	 @PostMapping("/memberInsert")
@@ -131,7 +126,7 @@ public class MemberController {
 			logger.info("회원가입 성공-");
 			model.addAttribute("success",true);
 			
-		 return "./member/signupView";
+		 return "/member/signupView";
 	 }
 	 @PostMapping("/checkID")
 	 public ResponseEntity<String>checkID(@RequestParam String userid) {
@@ -146,6 +141,58 @@ public class MemberController {
 	            result = "available";
 	        }                
 	        return new ResponseEntity<String>(result, HttpStatus.OK);
+	 }
+	 //회원 수정
+	 @GetMapping("/memberUpdate")
+	 public String memberUpdateView(Model model, HttpServletRequest request) {
+		 String userid = (String) request.getSession().getAttribute("userid");
+		 MemberDTO memberDTO= memberDAOImp.memberSelect(userid);
+		 model.addAttribute("memberDTO",memberDTO);
+		 return"/member/memberupdate";
+	 }
+	 @PostMapping("/memberUpdate")
+	 public String memberUpdate(MemberDTO memberDTO, HttpServletRequest request, Model model) {
+		
+		 String userid = (String) request.getSession().getAttribute("userid");
+		 String oldPassword=memberDTO.getPassword();
+		 String realPassword=memberDAOImp.memberSelect(userid).getPassword();
+		 String newPassword=memberDTO.getNewPassword();
+		 logger.info("비밀번호 확인---------"+newPassword);
+		 if (oldPassword.equals(realPassword)) {
+			 if (newPassword.isEmpty()) {
+				 memberDAOImp.memberUpdate(memberDTO);
+				 model.addAttribute("success",true);
+			}
+			 else {
+				memberDTO.setPassword(newPassword);
+				memberDAOImp.memberUpdate(memberDTO);
+				model.addAttribute("success",true);
+			}	 
+		}
+		 else {
+			 model.addAttribute("success",false);		
+		} 
+		return "member/memberupdateSucceed";
+	 }
+	 @GetMapping("/memberDelete")
+	 public String memberDeleteView() {
+		 return"member/memberDelete";
+	 }
+	 @PostMapping("/memberDelete")
+	 public String memberDelete(MemberDTO memberDTO, Model model) {
+		 logger.info("확인-----------------------" + memberDTO);
+		 String id= memberDTO.getUserid();
+		 String password=memberDTO.getPassword();
+		 String realpassword=memberDAOImp.memberSelect(id).getPassword();
+		 
+		 if (realpassword.equals(password)) {
+			 memberDAOImp.memberDelete(id);
+		}
+		 else {
+			model.addAttribute("errorMessage","비밀번호가 틀립니다.");
+		}
+		return "member/memberDeleteSucceed";
+		 
 	 }
 	 
 	 }

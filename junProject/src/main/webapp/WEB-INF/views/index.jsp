@@ -59,12 +59,12 @@
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
 		<% if (userid == null) { %>
             <!-- 로그아웃 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="loginView">로그인</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypageView">마이페이지</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="#">주문조회</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="#">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
         <% } %>
@@ -79,7 +79,7 @@
         <div class="row">
             <div class="col-12 col-lg-6 mx-auto">
                 <div id="banner-container" style="position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); overflow: hidden;">
-                    <img id="banner-image" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="Your Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img id="banner-image" src="resources/assets/img/home-bg2.jpg" alt="Your Image" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <a class="carousel-control-prev" href="#" role="button" data-bs-target="#banner-carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -103,7 +103,7 @@
 					<div class="card h-100">
 						<!-- Product image-->
 						<img class="card-img-top"
-							src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+							src="resources/assets/img/goodsimg.png" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
@@ -129,12 +129,12 @@
 							style="top: 0.5rem; right: 0.5rem">Sale</div>
 						<!-- Product image-->
 						<img class="card-img-top"
-							src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+							src="resources/assets/img/iphone.png" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
 								<!-- Product name-->
-								<h5 class="fw-bolder">Special Item</h5>
+								<h5 class="fw-bolder">아이뻐 14</h5>
 								<!-- Product reviews-->
 								<div
 									class="d-flex justify-content-center small text-warning mb-2">
@@ -164,7 +164,7 @@
 							style="top: 0.5rem; right: 0.5rem">Sale</div>
 						<!-- Product image-->
 						<img class="card-img-top"
-							src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+							src="resources/assets/img/flip.jpg" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
@@ -283,7 +283,9 @@
 	<script>
     var currentImageIndex = 0;
     var images = [
-       
+    	 "resources/assets/img/home-bg2.jpg",
+    	 "resources/assets/img/home-bg3.jpg",
+    	 "resources/assets/img/home-bg4.jpg",	
     ];
     var bannerImage = document.getElementById("banner-image");
 

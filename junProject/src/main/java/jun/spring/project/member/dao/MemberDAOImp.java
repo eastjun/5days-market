@@ -23,9 +23,9 @@ public class MemberDAOImp implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO memberSelect(MemberDTO memberDTO) {
+	public MemberDTO memberSelect(String userid) {
 		
-		return sqlSessionTemplate.selectOne("memberSelect",memberDTO);
+		return sqlSessionTemplate.selectOne("memberSelect",userid);
 	}
 
 	@Override

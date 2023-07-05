@@ -11,7 +11,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <title>글쓰기</title>
 <script src="resources/ckeditor/ckeditor.js"></script>
-<link rel="stylesheet" href="resources/ckeditor/contents.css">
+
 <!-- Bootstrap CSS-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -60,7 +60,7 @@
 					%>
 					<!-- 로그아웃 상태일 때 -->
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="loginView">로그인</a></li>
+						href="login">로그인</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="signup">회원가입</a></li>
 					<%
@@ -70,7 +70,7 @@
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="logout">로그아웃</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./MypageView.do">마이페이지</a></li>
+						href="mypage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="./OrderCheckView.do">주문조회</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
@@ -120,7 +120,10 @@
 	</section>
 
 	<script>
-		CKEDITOR.replace('editor1');
+			CKEDITOR.replace('editor1',{
+				height: 500,
+				filebrowserUploadUrl: '${pageContext.request.contextPath}/adm/fileupload.do' // 파일 업로드를 처리하는 URL 주소 설정
+			});
 		// 폼 제출 시 CKEditor 내용을 반영
 		document.querySelector('form').addEventListener('submit', function() {
 			var editorData = CKEDITOR.instances.editor1.getData();

@@ -78,30 +78,30 @@
                                 <div class="mb-3">
                                 <div class = "input-group">
                                     <label for="userid" class="form-label" style="margin-right: 20px;">아이디  </label>
-                                    <input type="text" class="form-control" id="userid" name="userid">
+                                    <input type="text" class="form-control" id="userid" name="userid" placeholder="아이디 입력 후 중복체크">
                                     <button type="button" id="checkId" class="btn btn-secondary">중복확인</button>
-                                    </div>
-                                     <span id="idCheckResult" style="color:red;"></span>
+                                </div>
+                                     	<span id="idCheckResult" style="color:red;"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">비밀번호</label>
-                                    <input type="password" class="form-control" id="password" name="password" >
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 입력">
                                 </div>
                                 <div class="mb-3">
                                     <label for="confirmPassword" class="form-label">비밀번호 확인</label>
-                                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="다시 입력해주세요">
                                 </div>
                                 <div class="mb-3">
                                     <label for="nickname" class="form-label">닉네임</label>
-                                    <input type="text" class="form-control" id="nickname" name="nickname">
+                                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="닉네임을 설정해주세요">
                                 </div>
                                 <div class="mb-3">
                                     <label for="phonenum" class="form-label">전화번호</label>
-                                    <input type="text" class="form-control" id="phonenum" name="phonenum">
+                                    <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="숫자만 입력">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">이메일</label>
-                                    <input type="email" class="form-control" id="email" name="email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력하세요">
                                 </div>
                                 <div class="mb-3">
                                     <label for="birthday" class="form-label">생년월일</label>
@@ -149,7 +149,7 @@ function validateForm() {
     var password = form["password"].value;
     var confirmPassword = form["confirmPassword"].value;
     if (password !== confirmPassword) {
-        alert("비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+        alert("비밀번호가 일치하지 않습니다.");
         return false;
     }
 

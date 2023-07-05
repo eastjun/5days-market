@@ -47,7 +47,7 @@ public class BoardController {
 		 
 		 return"/board/noticeSelect";
 	 } 
-	 @GetMapping("/boardInsertView")
+	 @GetMapping("/boardInsert")
 	 public String boardInsertView() {
 		 return"/board/noticeInsert";
 	 }
@@ -65,9 +65,8 @@ public class BoardController {
 		}	 
 		 return"/board/noticeInsertSucceed";
 	 }
-	 @GetMapping("/boardUpdateView")
+	 @GetMapping("/boardUpdate")
 	 public String boardUpdateView(BoardDTO boardDTO, Model model) {
-		 
 		 boardDTO = boardDAOImp.boardSelect(boardDTO);
 		 model.addAttribute("boardDTO",boardDTO);
 		 return"/board/noticeUpdate";
@@ -86,19 +85,19 @@ public class BoardController {
 	 }
 	 @GetMapping("/boardDelete")
 	 public String boardDelete(@RequestParam ("num") int num, Model model) {
-		try {
-			
+		
+		 try {
 			boardDAOImp.boardDelete(num);
-			model.addAttribute("succeed",true);
+			model.addAttribute("success",true);
 		} catch (Exception e) {
-			model.addAttribute("succeed",false);
+			model.addAttribute("success",false);
 		} 
 		 
 		 return "/board/noticeDelete";
 	 }
-	 @GetMapping("mypageView")
+	 @GetMapping("mypage")
 	 public String mypageView() {
-		 return"./board/mypage";
+		 return"/member/mypage";
 	 }
 	 
 	 

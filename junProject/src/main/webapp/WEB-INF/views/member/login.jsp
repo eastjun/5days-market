@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="ko" data-bs-theme="auto">
-<script src="./resources/js/color-modes.js"></script>
+<script src="resources/js/color-modes.js"></script>
   <head>
     <meta charset="utf-8">  
     <title>로그인</title>
@@ -85,7 +85,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="./resources/css/sign-in.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/sign-in.css" rel="stylesheet" type="text/css">
   </head>
   
   <body class="bg-body-tertiary">
@@ -139,37 +139,66 @@
         </li>
       </ul>
     </div>
+				<main class="form-signin w-100 m-auto">
+				  <form action="login" method="post" id="login">
+				    <img class="mb-3" src="resources/assets/img/login.png" alt="" width="70" height="70" style="display: block; margin: 0 auto;">
+				    <h1 class="h3 mb-3 fw-normal"  style="text-align: center;">로그인</h1>
+				
+				    <div class="form-floating">
+				      <input type="text" class="form-control" name="userid" id="userid" placeholder="아이디를 입력하세요." required>
+				      <label for="userid">아이디</label>
+				    </div>
+				    <div class="form-floating">
+				      <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력하세요." required>
+				      <label for="password">비밀번호</label>
+				    </div>
+				
+				    <div class="checkbox mb-3">
+				      <label>
+				        <input type="checkbox" value="rememberMe" id="rememberMe"> 아이디 저장하기
+				       
+				        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				        
+				        <a class="link-opacity-100 mb-5" href="signup">회원가입</a>
+				      </label>
+				    </div>
+				    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+				  
+				    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
+				  </form>
+				</main>
+		<script>
+		
+		  // 아이디 저장 기능
+		  var rememberMeCheckbox = document.getElementById("rememberMe");
+		  var userIdInput = document.getElementById("userid");
+		
+		  // 페이지가 로드될 때 저장된 아이디가 있다면 가져와서 입력 필드에 설정
+		  window.addEventListener("load", function() {
+		    var savedUserId = localStorage.getItem("savedUserId");
+		    if (savedUserId) {
+		      rememberMeCheckbox.checked = true;
+		      userIdInput.value = savedUserId;
+		    }
+		  });
+		
+		  // 아이디 저장 체크박스 이벤트 리스너
+		  rememberMeCheckbox.addEventListener("change", function() {
+		    if (rememberMeCheckbox.checked) {
+		      localStorage.setItem("savedUserId", userIdInput.value);
+		    } else {
+		      localStorage.removeItem("savedUserId");
+		    }
+		  });
+		    // 아이디 저장 시 마다 localStorage에 저장
+		    userIdInput.addEventListener("input", function() {
+		      if (rememberMeCheckbox.checked) {
+		        localStorage.setItem("savedUserId", userIdInput.value);
+		      }
+		  });
+		</script>
 
-<main class="form-signin w-100 m-auto">
-  <form action="login" method="post" id="login">
-    <img class="mb-3" src="./assets/img/login.png" alt="" width="70" height="70" style="display: block; margin: 0 auto;">
-    <h1 class="h3 mb-3 fw-normal"  style="text-align: center;">로그인</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" name="userid" id="userid" placeholder="아이디를 입력하세요." required>
-      <label for="userid">아이디</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력하세요." required>
-      <label for="password">비밀번호</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> 아이디 저장하기
-       
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <a class="link-opacity-100 mb-5" href="./Sign-upView.do">회원가입</a>
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
-  
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
-  </form>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="./resources/js/checkout.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="resources/js/checkout.js"></script>
   </body>
 </html>
