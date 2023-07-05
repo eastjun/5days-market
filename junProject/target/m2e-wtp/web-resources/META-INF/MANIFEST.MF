@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: sungj
 Build-Jdk: 1.8.0_361
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: EZEN
+Build-Jdk: 1.8.0_361
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5

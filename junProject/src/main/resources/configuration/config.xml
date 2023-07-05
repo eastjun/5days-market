@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
@@ -6,4 +7,14 @@
 		<typeAlias alias="BoardDTO" type="jun.spring.project.board.dto.BoardDTO" />
 		<typeAlias alias="MemberDTO" type="jun.spring.project.member.dto.MemberDTO"/>
 	</typeAliases>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="BoardDTO" type="jun.spring.project.board.dto.BoardDTO" />
+		<typeAlias alias="MemberDTO" type="jun.spring.project.member.dto.MemberDTO"/>
+	</typeAliases>
+>>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5
 </configuration>
