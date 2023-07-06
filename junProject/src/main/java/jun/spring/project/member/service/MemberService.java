@@ -1,21 +1,18 @@
-<<<<<<< HEAD
 package jun.spring.project.member.service;
+
+import javax.servlet.http.HttpServletRequest;
+
+
 
 import jun.spring.project.member.dto.MemberDTO;
 
 public interface MemberService {
 
-	public MemberDTO checkID(String id);
-	
+	public MemberDTO login(MemberDTO memberDTO);
+	public String checkID(String id);
+	public String findUserID(MemberDTO memberDTO);
+	public MemberDTO memberInsert(MemberDTO memberDTO);
+	public MemberDTO memberUpdateView(MemberDTO memberDTO, HttpServletRequest request);
+	public boolean memberUpdate(MemberDTO memberDTO, HttpServletRequest request);
+	public boolean memberDelete(MemberDTO memberDTO);
 }
-=======
-package jun.spring.project.member.service;
-
-import jun.spring.project.member.dto.MemberDTO;
-
-public interface MemberService {
-
-	public MemberDTO checkID(String id);
-	
-}
->>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5

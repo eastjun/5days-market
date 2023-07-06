@@ -38,9 +38,5 @@
 		</bean>
 		
 		<tx:annotation-driven transaction-manager="transactionManager"/>	
-<<<<<<< HEAD
 		<bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
-=======
-		
->>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5
 </beans>

@@ -164,7 +164,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-<<<<<<< HEAD
 		<!-- 파일 업로드 -->
 		<dependency>
 			  <groupId>commons-fileupload</groupId>
@@ -201,9 +200,6 @@
 		    <version>4.2.3.RELEASE</version>
 		</dependency>
 		
-=======
-	
->>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

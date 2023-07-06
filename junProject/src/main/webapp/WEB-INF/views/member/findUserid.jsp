@@ -5,13 +5,13 @@
 <script src="resources/js/color-modes.js"></script>
   <head>
     <meta charset="utf-8">  
-    <title>로그인</title>
+    <title>아이디 찾기</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
     
     <style>
-      .bd-placeholder-img {
+      /* .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
@@ -23,7 +23,7 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-      }
+      } */
 
       .b-example-divider {
         width: 100%;
@@ -139,70 +139,32 @@
         </li>
       </ul>
     </div>
-				<main class="form-signin w-100 m-auto">
-				  <form method="post" id="login">
-				    <img class="mb-3" src="resources/assets/img/login.png" alt="" width="70" height="70" style="display: block; margin: 0 auto;">
-				    <h1 class="h3 mb-3 fw-normal"  style="text-align: center;">로그인</h1>
-				
-				    <div class="form-floating">
-				      <input type="text" class="form-control" name="userid" id="userid" placeholder="아이디를 입력하세요." required>
-				      <label for="userid">아이디</label>
-				    </div>
-				    <div class="form-floating">
-				      <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력하세요." required>
-				      <label for="password">비밀번호</label>
-				    </div>
-				
-				    <div class="checkbox mb-3">
-				      <label>
-				        <input type="checkbox" value="rememberMe" id="rememberMe"> 아이디 저장하기
-				       
-				        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				        
-				        <a class="link-opacity-100 mb-5" href="signup">회원가입</a>
-				      </label>
-				    </div>
-				    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
-				  
-				   <div class="mt-3 text-center">
-						    <a class="link-opacity-100" href="findUserid">아이디 찾기</a>
-						    &nbsp; | &nbsp;
-						    <a class="link-opacity-100" href="resetpassword">비밀번호 찾기</a>
-				  </div>
-				    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
-				  </form>
-				</main>
+			<main class="form-signin w-100 m-auto">
+					  <form method="post" id="findUserid">
+						   <img class="mb-3" src="resources/assets/img/login.png" alt="" width="70" height="70" style="display: block; margin: 0 auto;">
+						      <h1 class="h3 mb-3 fw-normal" style="text-align: center;">아이디 찾기</h1>
+								    <div class="form-floating">
+									      <input type="email"pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" class="form-control" name="email" id="email" placeholder="이메일을 입력하세요." required>
+									      <label for="email">이메일 주소</label>
+								    </div>
+								    <div class="form-floating">
+									      <input type="text" class="form-control" name="phonenum" id="phonenum" placeholder="휴대폰번호를 입력하세요." required>
+									      <label for="phonenum">휴대폰 번호(숫자만 입력)</label>
+								    </div> 
+								    			
+						   <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">아이디 찾기</button>
+								    <div class="mt-3 text-center">
+									      <a class="link-opacity-100" href="signup">회원가입</a>
+									          &nbsp; | &nbsp;
+									      <a class="link-opacity-100" href="resetpassword">비밀번호 찾기</a>
+								    </div>
+					    </form>
+			</main>
+	    <% if (request.getMethod().equals("POST")) { %>
 		<script>
-		
-		  // 아이디 저장 기능
-		  var rememberMeCheckbox = document.getElementById("rememberMe");
-		  var userIdInput = document.getElementById("userid");
-		
-		  // 페이지가 로드될 때 저장된 아이디가 있다면 가져와서 입력 필드에 설정
-		  window.addEventListener("load", function() {
-		    var savedUserId = localStorage.getItem("savedUserId");
-		    if (savedUserId) {
-		      rememberMeCheckbox.checked = true;
-		      userIdInput.value = savedUserId;
-		    }
-		  });
-		
-		  // 아이디 저장 체크박스 이벤트 리스너
-		  rememberMeCheckbox.addEventListener("change", function() {
-		    if (rememberMeCheckbox.checked) {
-		      localStorage.setItem("savedUserId", userIdInput.value);
-		    } else {
-		      localStorage.removeItem("savedUserId");
-		    }
-		  });
-		    // 아이디 저장 시 마다 localStorage에 저장
-		    userIdInput.addEventListener("input", function() {
-		      if (rememberMeCheckbox.checked) {
-		        localStorage.setItem("savedUserId", userIdInput.value);
-		      }
-		  });
+		 alert("${message}");
 		</script>
-
+		<% } %>
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
       <script src="resources/js/checkout.js"></script>
   </body>

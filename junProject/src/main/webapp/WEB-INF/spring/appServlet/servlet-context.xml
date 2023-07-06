@@ -3,13 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-<<<<<<< HEAD
 	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
 		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
-=======
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
->>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -29,7 +25,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-<<<<<<< HEAD
 	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"> 
 			<beans:property name="maxUploadSize" value="-1"/> 
 			<beans:property name="defaultEncoding" value="UTF-8"/> 
@@ -37,15 +32,11 @@
 	
 	<context:component-scan base-package="jun.spring.project" />
 	
-	<interceptors>
+	<!-- <interceptors>
 	 <interceptor>
 	   <mapping path="/**"/>
 	   <beans:bean class="jun.spring.project.interceptor.LoginInterceptor" id="loginInterceptor"></beans:bean>
 	  </interceptor>
-	</interceptors>
+	</interceptors> -->
 	
-=======
-	<context:component-scan base-package="jun.spring.project" />
-	
->>>>>>> 0fcca063f8cad73f99bf00026c779225a30764b5
 </beans:beans>

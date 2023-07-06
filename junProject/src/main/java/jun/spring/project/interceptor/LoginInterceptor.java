@@ -12,10 +12,9 @@ public class LoginInterceptor implements HandlerInterceptor{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		String userid=(String) request.getSession().getAttribute("userid");
-		Integer uniqueid=(Integer) request.getSession().getAttribute("uniqueid");
+				return false;
 		
-		return true;
+		
 	}
 
 	@Override
