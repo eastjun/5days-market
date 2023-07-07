@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="mainView">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="boardSelectAll">Notice</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -50,14 +50,8 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
           <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./MemberLoginView.do">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Sign-upView.do">회원가입</a></li>
-        <% } else { %>
-            <!-- 로그인 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Logout.do">로그아웃</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./MypageView.do">마이페이지</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./OrderCheckView.do">주문조회</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./CartView.do">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
         <% } %>
                     </ul>
                 </div>
@@ -76,40 +70,44 @@
                         <div class="card-body">
                             <form action="memberInsert" method="post" onsubmit="return validateForm();">
                                 <div class="mb-3">
-                                <div class = "input-group">
-                                    <label for="userid" class="form-label" style="margin-right: 20px;">아이디  </label>
-                                    <input type="text" class="form-control" id="userid" name="userid" placeholder="아이디 입력 후 중복체크">
-                                    <button type="button" id="checkId" class="btn btn-secondary">중복확인</button>
-                                </div>
+                               		 
+		                                    <label for="userid" class="form-label" style="margin-right: 20px;"> 아이디  </label>
+		                                    <div class = "input-group">
+		                                    <input type="text" class="form-control" id="userid" name="userid" placeholder="아이디 입력 후 중복체크">
+		                                    <button type="button" id="checkId" class="btn btn-secondary">중복확인</button>
+                               		 </div>
                                      	<span id="idCheckResult" style="color:red;"></span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">비밀번호</label>
+                                    <label for="password" class="form-label"> 비밀번호</label>
                                     <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 입력">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="confirmPassword" class="form-label">비밀번호 확인</label>
+                                    <label for="confirmPassword" class="form-label"> 비밀번호 확인</label>
                                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="다시 입력해주세요">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nickname" class="form-label">닉네임</label>
-                                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="닉네임을 설정해주세요">
+                                	
+	                                    <label for="nickname" class="form-label" style="margin-right: 20px;"> 닉네임</label>
+	                                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="닉네임을 설정해주세요">
+                               	      	<span id="nicknameCheckResult" style="color:red;"></span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="phonenum" class="form-label">전화번호</label>
+                                    <label for="phonenum" class="form-label"> 전화번호</label>
                                     <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="숫자만 입력">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">이메일</label>
+                                    <label for="email" class="form-label"> 이메일</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력하세요">
+                                    <span id="emailCheckResult" style ="color:red;"></span>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="birthday" class="form-label">생년월일</label>
-                                    <input type="date" class="form-control" id="birthday" name="birthday">
+                                <div class="mb-3">    
+	                                    <label for="birthday" class="form-label" > 생년월일</label>
+	                                    <input type="date" class="form-control" id="birthday" name="birthday">                
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="agreeTerms" name="agreeTerms">
-                                    <label class="form-check-label" for="agreeTerms">이용 약관에 동의합니다.</label>
+                                    <label class="form-check-label" for="agreeTerms"> 이용 약관에 동의합니다.</label>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">회원가입</button>
@@ -200,6 +198,39 @@ $(document).ready(function() {
                 } else {
                     $("#idCheckResult").text("사용 가능한 아이디입니다.");
                     idCheckPassed= true;
+                }
+            }
+        });
+    });
+});
+$(document).ready(function() {
+    $("#nickname").blur(function() {
+        var nickname = $("#nickname").val();
+        $.ajax({
+            url: 'checkNickname', // update with your URL
+            type: 'POST',
+            data: {nickname: nickname},
+            success: function(response) {
+                if (response === "duplicate") {
+                    $("#nicknameCheckResult").text("닉네임이 이미 사용중입니다.");
+                } else {
+                    $("#nicknameCheckResult").text("사용 가능한 닉네임입니다.");
+                }
+            }
+        });
+    });
+
+    $("#email").blur(function() {
+        var email = $("#email").val();
+        $.ajax({
+            url: 'checkEmail', // update with your URL
+            type: 'POST',
+            data: {email: email},
+            success: function(response) {
+                if (response === "duplicate") {
+                    $("#emailCheckResult").text("이메일이 이미 사용중입니다.");
+                } else {
+                    $("#emailCheckResult").text("사용 가능한 이메일입니다.");
                 }
             }
         });

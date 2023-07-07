@@ -1,22 +1,20 @@
 package jun.spring.project.member.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
-import java.util.List;
 
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,16 +58,16 @@ public class MemberController {
 	                response.addCookie(cookie);
 	                model.addAttribute("message", "환영합니다 " + loginResult.getUserid() + " 님");
 	                model.addAttribute("loginSuccess", true);
-	                model.addAttribute("userid", loginResult.getUserid());
+	               // model.addAttribute("userid", loginResult.getUserid());
 	                return "./member/loginSucceed";
-	            } else {  // 비밀번호 불일치
+	            } else {  // 아이디 미존재
 	                model.addAttribute("message", "아이디가 존재하지 않습니다.");
-	                model.addAttribute("loginSuccess", false);
+	                //model.addAttribute("loginSuccess", false);
 	                return "./member/loginSucceed";
 	            }
-	        } else {  // 아이디 미존재
+	        } else {  // 비밀번호 불일치
 	            model.addAttribute("message", "비밀번호가 틀립니다.");
-	            model.addAttribute("loginSuccess", false);
+	           // model.addAttribute("loginSuccess", false);
 	            return "./member/loginSucceed";
 	        }
 	    }
@@ -107,6 +105,20 @@ public class MemberController {
 	 public ResponseEntity<String>checkID(@RequestParam String userid) {
 		 
 		 	String result=memberServiceImp.checkID(userid);
+		 
+	        return new ResponseEntity<String>(result, HttpStatus.OK);
+	 }
+	 @PostMapping("/checkNickname")
+	 public ResponseEntity<String>checkNickname(@RequestParam String nickname) {
+		 
+		 	String result=memberServiceImp.checkNickname(nickname);
+		 
+	        return new ResponseEntity<String>(result, HttpStatus.OK);
+	 }
+	 @PostMapping("/checkEmail")
+	 public ResponseEntity<String>checkEmail(@RequestParam String email) {
+		 
+		 	String result=memberServiceImp.checkEmail(email);
 		 
 	        return new ResponseEntity<String>(result, HttpStatus.OK);
 	 }

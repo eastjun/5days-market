@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Shop Homepage - Start Bootstrap Template</title>
+<title>Shop Homepage</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 <!-- Bootstrap icons-->
@@ -26,6 +26,11 @@
 	border-radius: 4px; /* 원하는 크기로 조정 */
 }
 
+.card-img-top {
+    object-fit: cover;  /* 이미지가 컨테이너를 꽉 채우면서 비율을 유지하도록 합니다. */
+    width: 374px;  /* 이미지의 가로 폭을 설정합니다. */
+    height: 265px;  /* 이미지의 세로 높이를 설정합니다. */
+}
 </style>
 </head>
 <body>
@@ -48,10 +53,10 @@
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#!">All Products</a></li>
+							<li><a class="dropdown-item" href="goodsList">All Products</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="#!">Popular Items</a></li>
-							<li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+							<li><a class="dropdown-item" href="goodsList">Popular Items</a></li>
+							<li><a class="dropdown-item" href="goodsList">New Arrivals</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -65,8 +70,8 @@
             <!-- 로그인 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="#">주문조회</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="#">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="orderCheck">주문조회</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="cart">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
         <% } %>
 				</ul>
 			</div>
@@ -97,13 +102,11 @@
 	<!-- Section-->
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 mt-5">
-			<div
-				class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+			<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
 				<div class="col mb-5">
 					<div class="card h-100">
 						<!-- Product image-->
-						<img class="card-img-top"
-							src="resources/assets/img/goodsimg.png" alt="..." />
+						<img class="card-img-top" src="resources/assets/img/goodsimg.png" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
@@ -117,7 +120,7 @@
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">상세 보기</a>
+								<a class="btn btn-outline-dark mt-auto" href="goodsDetail">상세 보기</a>
 							</div>
 						</div>
 					</div>
@@ -136,8 +139,7 @@
 								<!-- Product name-->
 								<h5 class="fw-bolder">아이뻐 14</h5>
 								<!-- Product reviews-->
-								<div
-									class="d-flex justify-content-center small text-warning mb-2">
+								<div class="d-flex justify-content-center small text-warning mb-2">
 									<div class="bi-star-fill"></div>
 									<div class="bi-star-fill"></div>
 									<div class="bi-star-fill"></div>
@@ -169,7 +171,7 @@
 						<div class="card-body p-4">
 							<div class="text-center">
 								<!-- Product name-->
-								<h5 class="fw-bolder">Sale Item</h5>
+								<h5 class="fw-bolder">갤럭시 플립6</h5>
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through">$50.00</span>
 								$25.00
@@ -178,7 +180,7 @@
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="cart.jsp">Add to cart</a>
+								<a class="btn btn-outline-dark mt-auto" href="cart.jsp">장바구니</a>
 							</div>
 						</div>
 					</div>

@@ -28,7 +28,7 @@ public class BoardController {
 	  
 	 @GetMapping("/mainView")
 	 public String mainView() {	 		 
-		return "./index";	 
+		return "/index";	 
 	 }
 	 
 	 @GetMapping("/boardSelectAll")
@@ -85,20 +85,25 @@ public class BoardController {
 	 }
 	 @GetMapping("/boardDelete")
 	 public String boardDelete(@RequestParam ("num") int num, Model model) {
-		
 		 try {
 			boardDAOImp.boardDelete(num);
 			model.addAttribute("success",true);
 		} catch (Exception e) {
 			model.addAttribute("success",false);
 		} 
-		 
 		 return "/board/noticeDelete";
 	 }
 	 @GetMapping("mypage")
 	 public String mypageView() {
 		 return"/member/mypage";
 	 }
-	 
+	 @GetMapping("/cart")
+	 public String cartView() {
+		 return "/board/cart";
+	 }
+	 @GetMapping("/orderCheck")
+	 public String orderCheck() {
+		 return"/board/orderCheck";
+	 }
 	 
 }

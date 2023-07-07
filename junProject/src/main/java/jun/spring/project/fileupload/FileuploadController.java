@@ -53,7 +53,7 @@ public class FileuploadController {
 						//파일을 바이트 타입으로 변경
 						bytes = file.getBytes();
 						//파일이 실제로 저장되는 경로 
-						String uploadPath = request.getServletContext().getRealPath("/resources/upload/");
+						String uploadPath = request.getServletContext().getRealPath("resources/upload");
 						//저장되는 파일에 경로 설정
 						File uploadFile = new File(uploadPath);
 						if (!uploadFile.exists()) {
@@ -80,7 +80,7 @@ public class FileuploadController {
 						//파일이 연결되는 Url 주소 설정
 						String fileUrl = request.getContextPath() + "/resources/upload/" + fileName;
 						
-						//생성된 jason 객체를 이용해 파일 업로드 + 이름 + 주소를 CkEditor에 전송
+						//생성된 json 객체를 이용해 파일 업로드 + 이름 + 주소를 CkEditor에 전송
 						json.addProperty("uploaded", 1);
 						json.addProperty("fileName", fileName);
 						json.addProperty("url", fileUrl);

@@ -43,13 +43,33 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public String checkID(String id) {
 		
-		MemberDTO memberDTO=memberDAOImp.memberSelect(id);
+		MemberDTO memberDTO=memberDAOImp.checkID(id);
 		
 		  if (memberDTO != null && memberDTO.getUserid() != null) {
 	            return "duplicate";
 	        } else {
 	            return "available";
 	        }
+	}
+	@Override
+	public String checkNickname(String nickname) {
+		MemberDTO memberDTO = memberDAOImp.checkNickname(nickname);
+			if (memberDTO !=null && memberDTO.getNickname() !=null) {
+				return "duplicate";
+			}
+			else {
+				return "available";
+			}
+	}
+	@Override
+	public String checkEmail(String email) {
+		MemberDTO memberDTO = memberDAOImp.checkEmail(email);
+			if (memberDTO !=null && memberDTO.getEmail() !=null) {
+			return "duplicate";
+		}
+		else {
+			return "available";
+		}
 	}
 	@Override
 	public String findUserID(MemberDTO memberDTO) {
@@ -107,6 +127,8 @@ public class MemberServiceImp implements MemberService{
 		}
 		 return false;
 	}
+	
+	
 	
 
 	

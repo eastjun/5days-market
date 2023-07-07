@@ -3,6 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jun.spring.project">
 
+	<!-- 공지사항 관리 -->
 	<select id="boardSelectAll" resultType="BoardDTO" parameterType="BoardDTO">
 		select num, title, content, userid, writeday 
 		from notice Order by num DESC
@@ -28,7 +29,7 @@
 		where num=#{num}
 	</delete>
 	
-	
+	<!-- 회원 관리 -->
 	<select id="memberSelectAll" resultType="MemberDTO" parameterType="MemberDTO">
 		select uniqueid, userid, password, nickname, phonenum, email, birthday
 		from member 
@@ -37,6 +38,16 @@
 	<select id="checkID" resultType="MemberDTO" parameterType="java.lang.String">
 		select userid from member 
 		where userid = #{userid}
+	</select>
+	
+	<select id="checkNickname" resultType="MemberDTO" parameterType="java.lang.String">
+		select nickname from member 
+		where nickname = #{nickname}
+	</select>
+	
+	<select id="checkEmail" resultType="MemberDTO" parameterType="java.lang.String">
+		select email from member 
+		where email = #{email}
 	</select>
 	
 	<select id="memberSelect" resultType="MemberDTO" parameterType="java.lang.String">
@@ -63,6 +74,28 @@
 		select userid, password, nickname, phonenum, email from member 
 		where email = #{email} and phonenum = #{phonenum}
 	</select>
+	
+	<!-- 상품 등록 관리 -->
+	<select id="goodsList" resultType="GoodsDTO" parameterType="GoodsDTO">
+		select goodsid, userid, title, price, origin, parcel, content, shipprice 
+		from goods Order by goodsid DESC
+	</select>
+	<select id="goodsSelect" parameterType="GoodsDTO" resultType="GoodsDTO">
+		select goodsid, userid, title, price, origin, parcel, content, shipprice from goods
+		where goodsid = #{goodsid}
+	</select>
+	<insert id="goodsInsert" parameterType="GoodsDTO">
+		 INSERT INTO goods (goodsid, userid, title, price, origin, parcel, content, shipprice )
+    	 VALUES (goods_seq.nextval,#{userid}, #{title}, #{price}, #{origin}, #{parcel}, #{content}, #{shipprice} )	
+	</insert>
+	 <update id="goodsUpdate" parameterType="GoodsDTO">
+		 update goods set goodsid=goodsid, userid = #{userid}, title=#{title}, price=#{price}, origin=#{origin}, parcel =#{parcel}, content=#{content}, shipprice=#{shipprice} 
+		 where goodsid=#{goodsid}
+	</update>
+	<delete id="goodsDelete" parameterType="GoodsDTO">
+		delete from goods
+		where goodsid=#{goodsid}
+	</delete>
 
 
 </mapper>

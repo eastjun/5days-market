@@ -7,6 +7,9 @@ import jun.spring.project.member.dto.MemberDTO;
 public interface MemberDAO {
 
 	public List<MemberDTO> memberSelectAll();
+	public MemberDTO checkID(String userid);
+	public MemberDTO checkNickname(String nickname);
+	public MemberDTO checkEmail(String email);
 	public MemberDTO memberSelect(String userid);
 	public MemberDTO memberInsert(MemberDTO memberDTO);
 	public void memberUpdate(MemberDTO memberDTO);

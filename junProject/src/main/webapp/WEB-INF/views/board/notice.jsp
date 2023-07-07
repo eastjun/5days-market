@@ -61,7 +61,7 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="./GoodsListView.do">All Products</a></li>
+							<li><a class="dropdown-item" href="goodsList">All Products</a></li>
 							<li><hr class="dropdown-divider" /></li>
 							<li><a class="dropdown-item" href="#">Popular Items</a></li>
 							<li><a class="dropdown-item" href="#">New Arrivals</a></li>
@@ -85,14 +85,13 @@
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
 						href="mypage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./OrderCheckView.do">주문조회</a></li>
+						href="orderCheck">주문조회</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./CartView.do">장바구니 
+						href="cart">장바구니 
 						<span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
 					<%
 						}
 					%>
-
 				</ul>
 			</div>
 		</div>
@@ -117,19 +116,19 @@
 				<table class="table mt-4">
 					<thead>
 						<tr>
-							<th style="width: 15%;">글 번호</th>
-							<th style="width: 45%;">제목</th>
-							<th style="width: 20%;">글쓴이</th>
-							<th style="width: 20%;">작성일</th>
+							<th style="width: 10%; text-align: center;">글 번호</th>
+							<th style="width: 50%; text-align: center;">제목</th>
+							<th style="width: 20%; text-align: center;">글쓴이</th>
+							<th style="width: 20%; text-align: center;">작성일</th>
 						</tr>
 					</thead>
 					<tbody>
 						    <c:forEach var="board" items="${boardSelectAll}">
 						        <tr>
-						            <td>${board.num}</td>
-						            <td><a class="notice-link" href="boardSelect?num=${board.num}">${board.title}</a></td>
-						            <td>${board.userid}</td>
-						            <td>${board.writeday}</td>
+						            <td style="text-align: center;">${board.num}</td>
+						            <td style="text-align: center;"><a class="notice-link" href="boardSelect?num=${board.num}">${board.title}</a></td>
+						            <td style="text-align: center;">${board.userid}</td>
+						            <td style="text-align: center;">${board.writeday}</td>
 						        </tr>
 						    </c:forEach>
 	 				</tbody>

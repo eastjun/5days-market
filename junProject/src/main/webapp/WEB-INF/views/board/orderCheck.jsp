@@ -44,35 +44,35 @@
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="./GoodsListView.do">All Products</a></li>
+							<li><a class="dropdown-item" href="goodsList">All Products</a></li>
 							<li><hr class="dropdown-divider" /></li>
 							<li><a class="dropdown-item" href="#">Popular Items</a></li>
 							<li><a class="dropdown-item" href="#">New Arrivals</a></li>
 						</ul></li>
 				</ul>
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
-         <% if (userid == null) { %>
+                        <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Sign-upView.do">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href=".mypage">마이페이지</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./OrderCheckView.do">주문조회</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="ordercheck">주문조회</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="cart">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
         <% } %>
-               	</ul>
+                        </ul>
 			</div>
 		</div>
 	</nav>
 
 	<!-- Header -->
 	<header class="bg-dark py-5"
-		style="background-image: url('resources/assets/img/home-bg.jpg')">
+		style="background-image: url('assets/img/home-bg.jpg')">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-black">
-				<h1 class="display-4 fw-bolder">마이 페이지</h1>
+				<h1 class="display-4 fw-bolder">주문 조회</h1>
 				<p class="lead fw-normal text-black-50 mb-0">최근 주문 내역</p>
 			</div>
 		</div>
@@ -105,15 +105,15 @@
 					<div class="mt-4">
 						<h4 class="list-group-item fw-bolder">회원정보</h4>
 						<div class="list-group">
-							<a href="memberUpdate" class="list-group-item list-group-item-action border-0">- 회원정보변경</a>
-							<a href="memberDelete" class="list-group-item list-group-item-action border-0">- 회원탈퇴</a>
+							<a href="./MemberInfoView.do" class="list-group-item list-group-item-action border-0">- 회원정보변경</a>
+							<a href="./MemberDeleteView.do" class="list-group-item list-group-item-action border-0">- 회원탈퇴</a>
 							<a href="#" class="list-group-item list-group-item-action border-0">- 배송지수정</a>
 						</div>
 					</div>
 				</div>
 				<!-- 주문 목록 -->
 				<div class="col-lg-9">
-					<h2 class="fw-bolder">최근 주문 내역</h2>
+					<h2 class="fw-bolder">주문 내역</h2>
 					<table class="table mt-4">
 						<thead>
 							<tr>
@@ -126,7 +126,7 @@
 						<tbody>
 							<tr>
 								<td>22</td>
-								<td>갤럭시23 </td>
+								<td>이이이이</td>
 								<td>22222원</td>
 								<td>2023.02.02</td>
 							</tr>

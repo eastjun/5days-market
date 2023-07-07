@@ -52,6 +52,23 @@ public class MemberDAOImp implements MemberDAO{
 		
 		return sqlSessionTemplate.selectOne("findUserid", memberDTO);
 	}
+
+	@Override
+	public MemberDTO checkID(String userid) {
+		
+		return sqlSessionTemplate.selectOne("checkID",userid);
+	}
+
+	@Override
+	public MemberDTO checkNickname(String nickname) {
+		return sqlSessionTemplate.selectOne("checkNickname",nickname);
+	}
+
+	@Override
+	public MemberDTO checkEmail(String email) {
+		
+		return sqlSessionTemplate.selectOne("checkEmail",email);
+	}
 	
 	
 }

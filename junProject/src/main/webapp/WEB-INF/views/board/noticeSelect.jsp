@@ -44,7 +44,7 @@
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="./GoodsListView.do">All Products</a></li>
+							<li><a class="dropdown-item" href="goodsList">All Products</a></li>
 							<li><hr class="dropdown-divider" /></li>
 							<li><a class="dropdown-item" href="#">Popular Items</a></li>
 							<li><a class="dropdown-item" href="#">New Arrivals</a></li>
@@ -54,13 +54,13 @@
                         <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="memberInsert">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./OrderCheckView.do">주문조회</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./CartView.do">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="orderCheck">주문조회</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="cart">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
         <% } %>
             
                   </ul>
@@ -88,7 +88,7 @@
 						        <div class="card">
 						            <div class="card-header">
 						                <h3>${boardSelect.title}</h3>
-						               		 <small class="text-muted">작성자: ${boardSelect.userid} 작성시간: ${boardSelect.writeday}</small>
+						               		 <small class="text-muted">작성자: ${boardSelect.userid} l 작성시간: ${boardSelect.writeday}</small>
 						            </div>
 						            <div class="card-body">
 						                <p class="card-text">${boardSelect.content}</p>
@@ -99,13 +99,26 @@
 								<%if (userid !=null&& uniqueid != null && uniqueid==100001){ %>
 										<div class="mt-3 d-flex justify-content-end">
 									     <a href="boardUpdate?num=${boardSelect.num}" class="btn btn-primary me-2">수정하기</a>
-						                 <a href="boardDelete?num=${boardSelect.num}" class="btn btn-secondary">삭제하기</a>               
+						                 <a href="#" class="btn btn-danger" id="boardDelete">삭제하기</a>
+						         <%} %>               
 						      </div> 
-						</form>
+					</form>
 				 </div> 
-								<%} %>
-		</div>
+			</div>
 	</section>
+	
+			<script>
+					document.getElementById('boardDelete').addEventListener(
+							'click',
+							function(event) {
+								const result = confirm('정말로 이 상품을 삭제하시겠습니까?');
+								if (result) {
+									window.location.href = "boardDelete?num=${boardSelect.num}";
+								} else {
+									event.preventDefault();
+								}
+							});
+			</script>
 
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
