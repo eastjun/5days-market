@@ -77,19 +77,19 @@
 	
 	<!-- 상품 등록 관리 -->
 	<select id="goodsList" resultType="GoodsDTO" parameterType="GoodsDTO">
-		select goodsid, userid, title, price, origin, parcel, content, shipprice 
+		select goodsid, userid, title, price, origin, parcel, content, shipprice, image 
 		from goods Order by goodsid DESC
 	</select>
 	<select id="goodsSelect" parameterType="GoodsDTO" resultType="GoodsDTO">
-		select goodsid, userid, title, price, origin, parcel, content, shipprice from goods
+		select goodsid, userid, title, price, origin, parcel, content, shipprice, image from goods
 		where goodsid = #{goodsid}
 	</select>
 	<insert id="goodsInsert" parameterType="GoodsDTO">
-		 INSERT INTO goods (goodsid, userid, title, price, origin, parcel, content, shipprice )
-    	 VALUES (goods_seq.nextval,#{userid}, #{title}, #{price}, #{origin}, #{parcel}, #{content}, #{shipprice} )	
+		 INSERT INTO goods (goodsid, userid, title, price, origin, parcel, content, shipprice, image )
+    	 VALUES (goods_seq.nextval,#{userid}, #{title}, #{price}, #{origin}, #{parcel}, #{content}, #{shipprice}, #{image} )	
 	</insert>
 	 <update id="goodsUpdate" parameterType="GoodsDTO">
-		 update goods set goodsid=goodsid, userid = #{userid}, title=#{title}, price=#{price}, origin=#{origin}, parcel =#{parcel}, content=#{content}, shipprice=#{shipprice} 
+		 update goods set goodsid=goodsid, userid = #{userid}, title=#{title}, price=#{price}, origin=#{origin}, parcel =#{parcel}, content=#{content}, shipprice=#{shipprice}, image = #{image} 
 		 where goodsid=#{goodsid}
 	</update>
 	<delete id="goodsDelete" parameterType="GoodsDTO">

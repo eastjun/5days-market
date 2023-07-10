@@ -61,28 +61,34 @@ public class FileuploadController {
 						}
 						//파일이름을 랜덤하게 생성
 						fileName = UUID.randomUUID().toString();
-						//업로드 경로 + 파일이름을 줘서  데이터를 서버에 전송
-						uploadPath = uploadPath + "/" + fileName;
-						out = new FileOutputStream(new File(uploadPath));
-						out.write(bytes);
 						
-						 // 이미지 리사이징
-                        File resizedFile = new File(uploadPath + "_resized");
-                        Thumbnails.of(uploadPath)
-                                .size(800, 800)
-                                .outputFormat("jpg")
-                                .toFile(resizedFile);
-                        
+						// 원본 이미지 저장을 위한 경로
+						String originalPath = uploadPath + "/" + fileName;
+						out = new FileOutputStream(new File(originalPath));
+						out.write(bytes);
+
+						// 리사이징된 이미지에 대한 파일 이름
+						String resizedFileName = fileName + "_resized.jpg";
+
+						// 리사이징된 이미지를 저장하기 위한 경로
+						String resizedPath = uploadPath + "/" + resizedFileName;
+
+						// 이미지 리사이징
+						Thumbnails.of(originalPath)
+						    .size(500, 500)
+						    .outputFormat("jpg")
+						    .toFile(resizedPath);
+						
 						//클라이언트에 이벤트 추가
 						printWriter = response.getWriter();
 						response.setContentType("text/html");
 						
 						//파일이 연결되는 Url 주소 설정
-						String fileUrl = request.getContextPath() + "/resources/upload/" + fileName;
+						String fileUrl = request.getContextPath() + "/resources/upload/" + resizedFileName;
 						
 						//생성된 json 객체를 이용해 파일 업로드 + 이름 + 주소를 CkEditor에 전송
 						json.addProperty("uploaded", 1);
-						json.addProperty("fileName", fileName);
+						json.addProperty("fileName", resizedFileName);
 						json.addProperty("url", fileUrl);
 						printWriter.println(json);
 					} catch (IOException e) {

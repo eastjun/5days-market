@@ -121,6 +121,8 @@
 
 	<script>
 			CKEDITOR.replace('editor1',{
+				extraPlugins: 'image2',
+				image2_maxSize: { width: 800, height: 800 },
 				height: 500,
 				filebrowserUploadUrl: '${pageContext.request.contextPath}/adm/fileupload.do' // 파일 업로드를 처리하는 URL 주소 설정
 			});

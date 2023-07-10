@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -26,13 +27,15 @@ public class MemberServiceImp implements MemberService{
 	
 	@Autowired
 	private final MemberDAOImp memberDAOImp;
+	@Autowired
+	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) {
 		List <MemberDTO> list = memberDAOImp.memberSelectAll();
 		 for (MemberDTO member : list) {
 	            if (memberDTO.getUserid().equals(member.getUserid())) {
-	                if (memberDTO.getPassword().equals(member.getPassword())) {
+	                if (bCryptPasswordEncoder.matches(memberDTO.getPassword(), member.getPassword())) {
 	                    return member;  // 로그인 성공
 	                }
 	                return null;  // 비밀번호 불일치
@@ -86,6 +89,10 @@ public class MemberServiceImp implements MemberService{
 		SecureRandom secureRandom = new SecureRandom();
 		int uniqueid=secureRandom.nextInt(100000);
 		memberDTO.setUniqueid(uniqueid);
+		
+		String rawPassword=memberDTO.getPassword();
+		String encodingPassword=bCryptPasswordEncoder.encode(rawPassword);
+		memberDTO.setPassword(encodingPassword);
 		memberDTO=memberDAOImp.memberInsert(memberDTO);
 		
 		return memberDTO;

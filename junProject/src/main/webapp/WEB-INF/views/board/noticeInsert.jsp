@@ -15,7 +15,6 @@
 <!-- 글쓰기 에디터 -->
 <script src="resources/ckeditor/ckeditor.js"></script>
 
-
 <!-- Bootstrap CSS-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -121,6 +120,8 @@
 
 	<script>
 		CKEDITOR.replace('editor1',{
+			extraPlugins: 'image2',
+			image2_maxSize: { width: 800, height: 800 },
 			height: 500,
 			filebrowserUploadUrl: '${pageContext.request.contextPath}/adm/fileupload.do' // 파일 업로드를 처리하는 URL 주소 설정,
 			

@@ -16,5 +16,6 @@ public class GoodsDTO {
 	private String parcel;
 	private String content;
 	private int shipprice;
+	private String image;
 
 }

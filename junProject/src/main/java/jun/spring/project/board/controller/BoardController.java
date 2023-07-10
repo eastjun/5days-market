@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jun.spring.project.board.dao.BoardDAOImp;
 import jun.spring.project.board.dto.BoardDTO;
+import jun.spring.project.goods.dao.GoodsDAOImp;
+import jun.spring.project.goods.dto.GoodsDTO;
 import lombok.RequiredArgsConstructor;
 
 
@@ -25,9 +27,11 @@ public class BoardController {
 	 private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	 
 	 private final BoardDAOImp boardDAOImp;
-	  
+	  private final GoodsDAOImp goodsDAOImp;
 	 @GetMapping("/mainView")
-	 public String mainView() {	 		 
+	 public String mainView(Model model, GoodsDTO goodsDTO) {
+		 List<GoodsDTO> list = goodsDAOImp.goodsList(goodsDTO);
+		 model.addAttribute("goodsList",list);
 		return "/index";	 
 	 }
 	 
