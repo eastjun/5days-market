@@ -69,6 +69,35 @@ public class MemberDAOImp implements MemberDAO{
 		
 		return sqlSessionTemplate.selectOne("checkEmail",email);
 	}
+	@Override
+	public MemberDTO findPassword(MemberDTO memberDTO) {
+		
+		return sqlSessionTemplate.selectOne("findPassword", memberDTO);
+	}
+
+	@Override
+	public void savePasswordToken(MemberDTO memberDTO) {
+		
+		sqlSessionTemplate.update("passwordResetToken",memberDTO);
+	}
+
+	@Override
+	public MemberDTO findByToken(String token) {
+		
+		return sqlSessionTemplate.selectOne("findByToken",token);
+	}
+
+	@Override
+	public MemberDTO resetPassword(MemberDTO memberDTO) {
+		
+		sqlSessionTemplate.update("resetpassword",memberDTO);
+		return memberDTO;
+		
+	}
+
+	
+
+	
 	
 	
 }

@@ -68,12 +68,27 @@
 	<delete id="memberDelete" parameterType="MemberDTO">
 		delete from member
 		where userid=#{userid}
-	</delete>
-	
+	</delete>	
 	<select id="findUserid" resultType="MemberDTO" parameterType="MemberDTO">
 		select userid, password, nickname, phonenum, email from member 
 		where email = #{email} and phonenum = #{phonenum}
 	</select>
+	<select id="findPassword" resultType="MemberDTO" parameterType="MemberDTO">
+		select userid, phonenum, email from member 
+		where email = #{email} and phonenum = #{phonenum}
+	</select>
+	<select id="findByToken" resultType="MemberDTO" parameterType="java.lang.String">
+		select userid, password, email, passwordResetToken from member 
+		where passwordResetToken = #{passwordResetToken}
+	</select>
+	<update id="passwordResetToken" parameterType="MemberDTO">
+		update member set passwordResetToken = #{passwordResetToken}
+		where email = #{email}
+	</update>
+	<update id="resetpassword" parameterType="MemberDTO">
+		update member set password = #{password}
+		where passwordResetToken = #{passwordResetToken}	
+	</update>
 	
 	<!-- 상품 등록 관리 -->
 	<select id="goodsList" resultType="GoodsDTO" parameterType="GoodsDTO">

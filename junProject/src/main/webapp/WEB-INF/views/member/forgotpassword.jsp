@@ -5,7 +5,7 @@
 <script src="resources/js/color-modes.js"></script>
   <head>
     <meta charset="utf-8">  
-    <title>아이디 찾기</title>
+    <title>비밀번호 찾기</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
@@ -140,9 +140,9 @@
       </ul>
     </div>
 			<main class="form-signin w-100 m-auto">
-					  <form method="post" id="findUserid">
+					  <form method="post" id="forgotpassword">
 						   <img class="mb-3" src="resources/assets/img/login.png" alt="" width="70" height="70" style="display: block; margin: 0 auto;">
-						      <h1 class="h3 mb-3 fw-normal" style="text-align: center;">아이디 찾기</h1>
+						      <h1 class="h3 mb-3 fw-normal" style="text-align: center;">비밀번호 찾기</h1>
 								    <div class="form-floating">
 									      <input type="email"pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" class="form-control" name="email" id="email" placeholder="이메일을 입력하세요." required>
 									      <label for="email">이메일 주소</label>
@@ -151,13 +151,13 @@
 									      <input type="text" class="form-control" name="phonenum" id="phonenum" placeholder="휴대폰번호를 입력하세요." required>
 									      <label for="phonenum">휴대폰 번호(숫자만 입력)</label>
 								    </div> 
-									
-						  			 <button class="mt-3 w-100 btn btn-lg btn-primary mt-3" type="submit">아이디 찾기</button>
-						   
+								    			
+						   <button class="mt-3 w-100 btn btn-lg btn-primary mt-3" type="submit">비밀번호 찾기</button>
+						   <div></div>
 								    <div class="mt-3 text-center">
 									      <a class="link-opacity-100" href="signup">회원가입</a>
 									          &nbsp; | &nbsp;
-									      <a class="link-opacity-100" href="forgotpassword">비밀번호 찾기</a>
+									      <a class="link-opacity-100" href="findUserid">아이디 찾기</a>
 								    </div>
 								    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
 					    </form>

@@ -28,7 +28,7 @@ public class BoardController {
 	 
 	 private final BoardDAOImp boardDAOImp;
 	  private final GoodsDAOImp goodsDAOImp;
-	 @GetMapping("/mainView")
+	 @GetMapping("/main")
 	 public String mainView(Model model, GoodsDTO goodsDTO) {
 		 List<GoodsDTO> list = goodsDAOImp.goodsList(goodsDTO);
 		 model.addAttribute("goodsList",list);

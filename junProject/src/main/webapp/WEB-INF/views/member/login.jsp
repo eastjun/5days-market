@@ -167,7 +167,7 @@
 				   <div class="mt-3 text-center">
 						    <a class="link-opacity-100" href="findUserid">아이디 찾기</a>
 						    &nbsp; | &nbsp;
-						    <a class="link-opacity-100" href="resetpassword">비밀번호 찾기</a>
+						    <a class="link-opacity-100" href="forgotpassword">비밀번호 찾기</a>
 				  </div>
 				    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
 				  </form>

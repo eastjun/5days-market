@@ -14,5 +14,11 @@ public interface MemberDAO {
 	public MemberDTO memberInsert(MemberDTO memberDTO);
 	public void memberUpdate(MemberDTO memberDTO);
 	public void memberDelete(String id);
-	public MemberDTO findUserid(MemberDTO memberDTO);
+	MemberDTO findUserid(MemberDTO memberDTO);
+	MemberDTO findPassword(MemberDTO memberDTO);
+	void savePasswordToken(MemberDTO memberDTO);
+	MemberDTO findByToken(String token);
+	MemberDTO resetPassword(MemberDTO memberDTO);
+	
 }
+	

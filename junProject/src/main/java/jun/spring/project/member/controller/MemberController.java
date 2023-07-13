@@ -1,29 +1,24 @@
 package jun.spring.project.member.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
-import java.util.List;
-
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import jun.spring.project.member.dao.MemberDAOImp;
+
 import jun.spring.project.member.dto.MemberDTO;
 import jun.spring.project.member.service.MemberServiceImp;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +29,6 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 
 	 private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	 
 	 
 	 @Autowired
 	 private final MemberServiceImp memberServiceImp;
@@ -50,28 +44,31 @@ public class MemberController {
 		 
 		 MemberDTO loginResult = memberServiceImp.login(memberDTO);
 
-	        if (loginResult != null) {
-	            if (loginResult.getUserid() != null) {  // 로그인 성공
-	                request.getSession().setAttribute("userid", loginResult.getUserid());
-	                request.getSession().setAttribute("uniqueid", loginResult.getUniqueid());
-	                Cookie cookie = new Cookie("userid", loginResult.getUserid());
-	                cookie.setMaxAge(1800);  // 30 minutes
-	                response.addCookie(cookie);
-	                model.addAttribute("message", "환영합니다 " + loginResult.getUserid() + " 님");
-	                model.addAttribute("loginSuccess", true);
-	               // model.addAttribute("userid", loginResult.getUserid());
-	                return "./member/loginSucceed";
-	            } else {  // 아이디 미존재
-	                model.addAttribute("message", "아이디가 존재하지 않습니다.");
-	                //model.addAttribute("loginSuccess", false);
-	                return "./member/loginSucceed";
-	            }
-	        } else {  // 비밀번호 불일치
-	            model.addAttribute("message", "비밀번호가 틀립니다.");
-	           // model.addAttribute("loginSuccess", false);
-	            return "./member/loginSucceed";
-	        }
-	    }
+		 	if (loginResult == null) {  // 비밀번호 불일치
+		        model.addAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+		        model.addAttribute("loginresult", false);
+		        return "./member/loginresult";
+		    }
+
+		    String userid = loginResult.getUserid();
+		    if (userid == null) {  // 아이디 미존재
+		        model.addAttribute("message", "아이디가 존재하지 않습니다.");
+		        model.addAttribute("loginresult", false);
+		        return "./member/loginresult";
+		    }
+
+		    // 로그인 성공
+		    request.getSession().setAttribute("userid", userid);
+		    request.getSession().setAttribute("uniqueid", loginResult.getUniqueid());
+
+		    Cookie cookie = new Cookie("userid", userid);
+		    cookie.setMaxAge(1800);  // 30 minutes
+		    response.addCookie(cookie);
+
+		    model.addAttribute("message", "환영합니다 " + userid + " 님");
+		    model.addAttribute("loginresult", true);
+		    return "./member/loginresult";
+		}
 
 	 //로그아웃 관리
 	 @GetMapping("/logout")
@@ -91,15 +88,14 @@ public class MemberController {
 	 @GetMapping("/signup")
 	 public String signup() {	 
 		 return"/member/signup";
-	 }
-	 
+	 } 
 	 @PostMapping("/memberInsert")
 	 public String memberInsert(Model model, MemberDTO memberDTO) {
 		 
 		 	memberDTO = memberServiceImp.memberInsert(memberDTO);
 			model.addAttribute("success",true);
 			
-		 return "/member/signupView";
+		 return "/member/signupresult";
 	 }
 	 // 회원가입 시 아이디 중복체크
 	 @PostMapping("/checkID")
@@ -173,13 +169,40 @@ public class MemberController {
 		 String userid = memberServiceImp.findUserID(memberDTO);
 		 if (userid==null) {
 			 model.addAttribute("message","회원정보가 존재하지 않습니다.");
-			 return "member/findUserid";
+			 return "member/findUseridresult";
 		}
 		 model.addAttribute("message","당신의 아이디는 " + userid + " 입니다.");
 		 
-		 return "member/findUseridSucceed";
-		 
-		 
+		 return "member/findUseridresult";	 
 	 }	 
+	 @GetMapping("/forgotpassword")
+	 public String forgotPasswordView() {
+		 return "member/forgotpassword";
+	 }
+	 @PostMapping("/forgotpassword")
+	 public String forgotPassword(MemberDTO memberDTO, Model model) {
+		 
+		 String result=memberServiceImp.forgotPassword(memberDTO);
+		 
+		 return"redirect:/main";
+	 }
+	 @GetMapping("resetpassword")
+	 public String resetPasswordView() {
+		 return "member/resetpassword";
+	 }
+	 @PostMapping("resetpassword")
+	 public String resetPassword(String token, String password, Model model) {
+		 
+		 MemberDTO result = memberServiceImp.resetPassword(token, password);
+		 if (result !=null) {
+			 model.addAttribute("success",true);
+			 return "member/resetpasswordresult";
+		}
+		 else {
+			 model.addAttribute("success",false);
+			 return "member/resetpasswordresult";		
+		}
+		
+	 }
 }
 

@@ -17,4 +17,7 @@ public interface MemberService {
 	public MemberDTO memberUpdateView(MemberDTO memberDTO, HttpServletRequest request);
 	public boolean memberUpdate(MemberDTO memberDTO, HttpServletRequest request);
 	public boolean memberDelete(MemberDTO memberDTO);
+	public String forgotPassword(MemberDTO memberDTO);
+	public MemberDTO resetPassword(String token, String password);
+	
 }
