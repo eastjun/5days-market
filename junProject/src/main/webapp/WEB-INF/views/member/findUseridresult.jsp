@@ -41,9 +41,9 @@
         <!-- End Card -->
 
         <div class="mt-3 text-center">
-            <a class="link-opacity-100" href="login">로그인</a> 
+            <a class="link-opacity-100" href="/login">로그인</a> 
                 &nbsp; | &nbsp; 
-            <a class="link-opacity-100" href="reset password">비밀번호 찾기</a>
+            <a class="link-opacity-100" href="/reset password">비밀번호 찾기</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>

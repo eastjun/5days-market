@@ -30,7 +30,7 @@
       	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
 		<div class="container px-4 px-lg-5">
-			<a href="main">
+			<a href="/main">
 				  <img src="resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -42,15 +42,15 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					
-					<li class="nav-item"><a class="nav-link" href="main">공지사항</a></li>
+					<li class="nav-item"><a class="nav-link" href="/boards">공지사항</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
                     </div>
@@ -58,14 +58,14 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                        <% if (userid == null) { %>
             <!-- 로그아웃 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/login">로그인</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/signup">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="mypage">마이페이지</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./OrderCheckView.do">주문조회</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="cart">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/logout">로그아웃</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/mypage">마이페이지</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/orderCheck">주문조회</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/cart">장바구니 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
              
         
         
@@ -88,18 +88,18 @@
 			    <div class="container px-4 px-lg-5 mt-5">
 			        <div class="d-flex justify-content-end">
 			            <%if (uniqueid != null && uniqueid>=100000){ %>
-			                <a class="btn btn-primary me-3 mb-3" href="goodsInsert">상품 등록</a>
+			                <a class="btn btn-primary me-3 mb-3" href="/goods/new">상품 등록</a>
 			            <%} %>
 			        </div>
 			        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-1 justify-content-center">
 			            <!-- Product Card -->
-			            <c:forEach var="goods" items="${goodsList}">
+			            <c:forEach var="goods" items="${goods}">
 			                <div class="card mb-3">
 			                    <div class="row g-0">
 			                        <div class="col-md-4 image-container" style="height: 200px; display: flex; align-items: center; justify-content: center;">
 			                            <!-- Product image-->
 			                          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-			                           	 <img src="/project/resources/upload/${goods.image}" class="img-fluid rounded-start" alt="..." style="max-height: 100%; max-width: 100%; object-fit: cover;">
+			                           	 <img src="/resources/upload/${goods.image}" class="img-fluid rounded-start" alt="..." style="max-height: 100%; max-width: 100%; object-fit: cover;">
 			                          </div>
 			                        </div>
 			                        <div class="col-md-8">
@@ -124,7 +124,7 @@
 			                                <!-- Product actions-->
 			                                <p class="card-text">
 			                                    <small class="text-muted">
-			                                        <a href="goodsSelect?goodsid=${goods.goodsid}" class="btn btn-primary">상세보기</a>
+			                                        <a href="goods/${goods.goodsid}" class="btn btn-primary">상세보기</a>
 			                                        <a href="cart" class="btn btn-secondary">장바구니에 추가</a>
 			                                    </small>
 			                                </p>
@@ -144,6 +144,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
     </body>
 </html>

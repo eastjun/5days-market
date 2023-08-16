@@ -15,9 +15,9 @@
 <% if (message != null) { %>
     alert('<%=message%>');
     <% if ((Boolean)request.getAttribute("loginresult")) { %>
-        window.location.href = "main"; 
+        window.location.href = "/main"; 
     <% } else { %>
-        window.location.href = "login"; // 실패시 다시 로그인 페이지로 돌아감
+        window.location.href = "/login"; // 실패시 다시 로그인 페이지로 돌아감
     <% } %>
 <% } %>
 </script>

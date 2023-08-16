@@ -45,7 +45,7 @@
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
 		<div class="container px-4 px-lg-5">
-			<a href="main">
+			<a href="/main">
 				  <img src="resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -57,15 +57,15 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					
-					<li class="nav-item"><a class="nav-link" href="main">공지사항</a></li>
+					<li class="nav-item"><a class="nav-link" href="/main">공지사항</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
@@ -74,21 +74,21 @@
 					%>
 					<!-- 로그아웃 상태일 때 -->
 					<li class="nav-item">
-					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="login">로그인</a></li>
+					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="/login">로그인</a></li>
 					<li class="nav-item">
-					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="signup">회원가입</a></li>
+					<a class="nav-link px-lg-3 py-2 py-lg-4"	href="/signup">회원가입</a></li>
 					<%
 						} else {
 					%>
 					<!-- 로그인 상태일 때 -->
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="logout">로그아웃</a></li>
+						href="/logout">로그아웃</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="mypage">마이페이지</a></li>
+						href="/mypage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="orderCheck">주문조회</a></li>
+						href="/orderCheck">주문조회</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="cart">장바구니 
+						href="/cart">장바구니 
 						<span class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
 					<%
 						}
@@ -127,7 +127,7 @@
 						    <c:forEach var="board" items="${boardSelectAll}">
 						        <tr>
 						            <td style="text-align: center;">${board.num}</td>
-						            <td style="text-align: center;"><a class="notice-link" href="boardSelect?num=${board.num}">${board.title}</a></td>
+						            <td style="text-align: center;"><a class="notice-link" href="boards/${board.num}">${board.title}</a></td>
 						            <td style="text-align: center;">${board.userid}</td>
 						            <td style="text-align: center;">${board.writeday}</td>
 						        </tr>
@@ -138,7 +138,7 @@
 					if (userid != null && uniqueid != null && uniqueid == 100001) {
 				%>
 				<div class="mt-3 d-flex justify-content-end">
-					<a href="boardInsert">
+					<a href="/boards/write">
 						<button type="button" class="btn btn-primary">공지 등록</button>
 					</a>
 				</div>

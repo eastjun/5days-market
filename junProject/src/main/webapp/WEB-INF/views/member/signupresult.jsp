@@ -8,7 +8,7 @@
     var success = <%= request.getAttribute("success") %>;
     if (success) {
       alert("회원가입이 성공했습니다.");
-      location.href = "main";
+      location.href = "/main";
     }
   </script>
 </head>

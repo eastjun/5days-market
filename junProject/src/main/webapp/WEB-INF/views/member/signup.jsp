@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/styles.css" rel="stylesheet" />
+    <link href="/resources/css/styles.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <style>
@@ -30,8 +30,8 @@
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
 		<div class="container px-4 px-lg-5">
-			<a href="main">
-				  <img src="resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
+			<a href="/main">
+				  <img src="/resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -42,23 +42,23 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					
-					<li class="nav-item"><a class="nav-link" href="main">공지사항</a></li>
+					<li class="nav-item"><a class="nav-link" href="/boards">공지사항</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
+						class="nav-link dropdown-toggle" id="navbarDropdown" href="/goods"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
           <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/login">로그인</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/signup">회원가입</a></li>
         <% } %>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
                             <h5 class="fw-bold mb-0">회원가입</h5>
                         </div>
                         <div class="card-body">
-                            <form action="memberInsert" method="post" onsubmit="return validateForm();">
+                            <form method="post" onsubmit="return validateForm();">
                                 <div class="mb-3">
                                		 
 		                                    <label for="userid" class="form-label" style="margin-right: 20px;"> 아이디  </label>
@@ -135,7 +135,7 @@
     
     <script>
     var idCheckPassed = false;
-function validateForm() {
+	function validateForm() {
     // 필요한 정보를 얻기 위해 form 요소에 접근
     var form = document.forms[0];
 
@@ -190,47 +190,49 @@ function validateForm() {
     // 모든 검사를 통과한 경우 폼 제출
     return true;
 }
+	//아이디 중복체크
+	$(document).ready(function() {
+	    $("#checkId").click(function() {
+	        var userid = $("#userid").val();
+	        $.ajax({
+	            url: 'checkID',  
+	            type: 'POST',
+	            data: {userid: userid},
+	            success: function(response) {
+	                if (response === "duplicate") {
+	                    $("#idCheckResult").text("아이디가 이미 사용중입니다.");
+	                    idCheckPassed= false;
+	                } else {
+	                    $("#idCheckResult").text("사용 가능한 아이디입니다.");
+	                    idCheckPassed= true;
+	                }
+	            }
+	        });
+	    });
+	});
+		//닉네임 중복 체크
+		$(document).ready(function() {
+		    $("#nickname").blur(function() {
+		        var nickname = $("#nickname").val();
+		        $.ajax({
+		            url: 'checkNickname', 
+		            type: 'POST',
+		            data: {nickname: nickname},
+		            success: function(response) {
+		                if (response === "duplicate") {
+		                    $("#nicknameCheckResult").text("닉네임이 이미 사용중입니다.");
+		                } else {
+		                    $("#nicknameCheckResult").text("사용 가능한 닉네임입니다.");
+		                }
+		            }
+		        });
+		    });
 
-$(document).ready(function() {
-    $("#checkId").click(function() {
-        var userid = $("#userid").val();
-        $.ajax({
-            url: 'checkID',  // change it to your URL
-            type: 'POST',
-            data: {userid: userid},
-            success: function(response) {
-                if (response === "duplicate") {
-                    $("#idCheckResult").text("아이디가 이미 사용중입니다.");
-                    idCheckPassed= false;
-                } else {
-                    $("#idCheckResult").text("사용 가능한 아이디입니다.");
-                    idCheckPassed= true;
-                }
-            }
-        });
-    });
-});
-$(document).ready(function() {
-    $("#nickname").blur(function() {
-        var nickname = $("#nickname").val();
-        $.ajax({
-            url: 'checkNickname', // update with your URL
-            type: 'POST',
-            data: {nickname: nickname},
-            success: function(response) {
-                if (response === "duplicate") {
-                    $("#nicknameCheckResult").text("닉네임이 이미 사용중입니다.");
-                } else {
-                    $("#nicknameCheckResult").text("사용 가능한 닉네임입니다.");
-                }
-            }
-        });
-    });
-
+	//이메일 중복체크
     $("#email").blur(function() {
         var email = $("#email").val();
         $.ajax({
-            url: 'checkEmail', // update with your URL
+            url: 'checkEmail', 
             type: 'POST',
             data: {email: email},
             success: function(response) {

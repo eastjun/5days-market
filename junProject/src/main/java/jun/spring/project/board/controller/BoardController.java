@@ -10,8 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import jun.spring.project.board.dao.BoardDAOImp;
 import jun.spring.project.board.dto.BoardDTO;
@@ -31,11 +32,11 @@ public class BoardController {
 	 @GetMapping("/main")
 	 public String mainView(Model model, GoodsDTO goodsDTO) {
 		 List<GoodsDTO> list = goodsDAOImp.goodsList(goodsDTO);
-		 model.addAttribute("goodsList",list);
+		 model.addAttribute("goods",list);
 		return "/index";	 
 	 }
 	 
-	 @GetMapping("/boardSelectAll")
+	 @GetMapping("/boards")
 	 public String boardSelectAll(Model model, BoardDTO boardDTO) {
 		
 		 List<BoardDTO> list = boardDAOImp.boardSelectAll(boardDTO);
@@ -43,61 +44,61 @@ public class BoardController {
 		 
 		 return "/board/notice";		 
 	 }
-	 @GetMapping("/boardSelect")
-	 public String boardSelect(Model model, BoardDTO boardDTO, @RequestParam("num") int num) {
+	 @GetMapping("/boards/{num}")
+	 public String boardSelect(Model model, BoardDTO boardDTO, @PathVariable int num) {
 		 boardDTO.setNum(num);
 		 boardDTO = boardDAOImp.boardSelect(boardDTO);
 		 model.addAttribute("boardSelect",boardDTO);
 		 
 		 return"/board/noticeSelect";
 	 } 
-	 @GetMapping("/boardInsert")
+	 @GetMapping("/boards/write")
 	 public String boardInsertView() {
 		 return"/board/noticeInsert";
 	 }
-	 @PostMapping("/boardInsert")
+	 @PostMapping("/boards/write")
 	 public String boardInsert(BoardDTO boardDTO, Model model, HttpServletRequest request) {
 		 String userid = (String) request.getSession().getAttribute("userid");
 		 boardDTO.setUserid(userid);
 		 try {
 			 boardDAOImp.boardInsert(boardDTO);
-			 model.addAttribute("success", true);
+			 model.addAttribute("result", true);
 			
 		} catch (Exception e) {
 			logger.info("글 작성 실패 --" + e);
-			model.addAttribute("success", false);
+			model.addAttribute("result", false);
 		}	 
-		 return"/board/noticeInsertSucceed";
+		 return"/board/noticeInsertResult";
 	 }
-	 @GetMapping("/boardUpdate")
-	 public String boardUpdateView(BoardDTO boardDTO, Model model) {
+	 @GetMapping("/boards/{num}/edit")
+	 public String boardUpdateView(@PathVariable int num,BoardDTO boardDTO, Model model) {
 		 boardDTO = boardDAOImp.boardSelect(boardDTO);
 		 model.addAttribute("boardDTO",boardDTO);
 		 return"/board/noticeUpdate";
 	 }
-	 @PostMapping("/boardUpdate")
-	 public String boardUpdate(BoardDTO boardDTO, Model model, HttpServletRequest request) {
+	 @PostMapping("/boards/{num}/edit")
+	 public String boardUpdate(@PathVariable int num,BoardDTO boardDTO, Model model, HttpServletRequest request) {
 		 String userid = (String) request.getSession().getAttribute("userid");
 		 boardDTO.setUserid(userid);
 		 try {
 			 boardDAOImp.boardUpdate(boardDTO);
-			 model.addAttribute("success",true);
+			 model.addAttribute("result",true);
 		} catch (Exception e) {
-			model.addAttribute("suceess",false);
+			model.addAttribute("result",false);
 		}		 
-		 return"/board/noticeUpdateSucceed";
+		 return"/board/noticeUpdateResult";
 	 }
-	 @GetMapping("/boardDelete")
-	 public String boardDelete(@RequestParam ("num") int num, Model model) {
+	 @GetMapping("/boards/{num}/delete")
+	 public String boardDelete(@PathVariable int num, Model model) {
 		 try {
 			boardDAOImp.boardDelete(num);
-			model.addAttribute("success",true);
+			model.addAttribute("result",true);
 		} catch (Exception e) {
-			model.addAttribute("success",false);
+			model.addAttribute("result",false);
 		} 
 		 return "/board/noticeDelete";
 	 }
-	 @GetMapping("mypage")
+	 @GetMapping("/mypage")
 	 public String mypageView() {
 		 return"/member/mypage";
 	 }

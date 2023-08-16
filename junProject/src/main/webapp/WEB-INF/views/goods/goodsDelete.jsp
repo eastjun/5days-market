@@ -11,7 +11,7 @@
  var success = <%= request.getAttribute("success") %>;
     if (success) {
       alert("삭제가 완료되었습니다.");
-      location.href = "goodsList";
+      location.href = "/goods";
     }
     else {
 		alert("등록 실패!");

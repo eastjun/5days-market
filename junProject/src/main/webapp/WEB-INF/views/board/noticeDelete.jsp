@@ -8,10 +8,10 @@
 </head>
 <body>
 <script type="text/javascript">
- var success = <%= request.getAttribute("success") %>;
+ var success = <%= request.getAttribute("result") %>;
     if (success) {
       alert("삭제가 완료되었습니다.");
-      location.href = "boardSelectAll";
+      location.href = "/boards";
     }
     else {
 		alert("등록 실패!");

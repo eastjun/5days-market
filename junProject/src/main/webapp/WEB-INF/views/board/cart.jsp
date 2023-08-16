@@ -44,10 +44,10 @@
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
                 <div class="collapse navbar-collapse" id="navbarResponsive">

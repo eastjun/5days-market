@@ -89,7 +89,7 @@ public class MemberController {
 	 public String signup() {	 
 		 return"/member/signup";
 	 } 
-	 @PostMapping("/memberInsert")
+	 @PostMapping("/signup")
 	 public String memberInsert(Model model, MemberDTO memberDTO) {
 		 
 		 	memberDTO = memberServiceImp.memberInsert(memberDTO);
@@ -120,7 +120,7 @@ public class MemberController {
 	        return new ResponseEntity<String>(result, HttpStatus.OK);
 	 }
 	 //회원정보 수정
-	 @GetMapping("/memberUpdate")
+	 @GetMapping("/member/edit")
 	 public String memberUpdateView(Model model, MemberDTO memberDTO, HttpServletRequest request) {
 		
 		 memberDTO=memberServiceImp.memberUpdateView(memberDTO, request);
@@ -128,7 +128,7 @@ public class MemberController {
 		 return"/member/memberupdate";
 	 }
 	 
-	 @PostMapping("/memberUpdate")
+	 @PostMapping("/member/edit")
 	 public String memberUpdate(MemberDTO memberDTO, HttpServletRequest request, Model model) {
 		
 		 boolean success= memberServiceImp.memberUpdate(memberDTO, request);
@@ -137,11 +137,11 @@ public class MemberController {
 		return "member/memberupdateSucceed";
 	 } 
 	 //회원 탈퇴
-	 @GetMapping("/memberDelete")
+	 @GetMapping("/member/delete")
 	 public String memberDeleteView() {
 		 return"member/memberDelete";
 	 }
-	 @PostMapping("/memberDelete")
+	 @PostMapping("/member/delete")
 	 public String memberDelete(MemberDTO memberDTO, Model model, HttpServletRequest request) {	
 		 boolean success =memberServiceImp.memberDelete(memberDTO);
 		 String message;

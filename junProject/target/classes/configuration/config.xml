@@ -6,5 +6,6 @@
 		<typeAlias alias="BoardDTO" type="jun.spring.project.board.dto.BoardDTO" />
 		<typeAlias alias="MemberDTO" type="jun.spring.project.member.dto.MemberDTO"/>
 		<typeAlias alias="GoodsDTO" type="jun.spring.project.goods.dto.GoodsDTO"/>
+		<typeAlias alias="GoodsQnaDTO" type="jun.spring.project.goods.dto.GoodsQnaDTO"/>
 	</typeAliases>
 </configuration>

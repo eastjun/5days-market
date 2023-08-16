@@ -12,10 +12,10 @@
         <script type="text/javascript">
             alert("${message}");
             <c:if test="${message eq '회원 탈퇴가 완료되었습니다.'}">
-                location.href = "main"; // 탈퇴가 성공적으로 이루어졌으면 메인 페이지로 이동
+                location.href = "/main"; // 탈퇴가 성공적으로 이루어졌으면 메인 페이지로 이동
             </c:if>
             <c:if test="${message eq '비밀번호가 틀립니다.'}">
-                location.href = "memberDelete"; // 비밀번호가 틀렸으면 다시 탈퇴 페이지로 이동
+                location.href = "/member/delete"; // 비밀번호가 틀렸으면 다시 탈퇴 페이지로 이동
             </c:if>
         </script>
     </c:when>

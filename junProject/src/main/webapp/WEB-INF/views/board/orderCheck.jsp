@@ -45,17 +45,17 @@
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <% if (userid == null) { %>
       		  <!-- 로그아웃 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="login">로그인</a></li>
-            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="./Sign-upView.do">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="signup">회원가입</a></li>
         <% } else { %>
             <!-- 로그인 상태일 때 -->
             <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="logout">로그아웃</a></li>

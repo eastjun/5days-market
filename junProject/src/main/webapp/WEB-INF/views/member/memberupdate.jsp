@@ -31,8 +31,8 @@
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
 		<div class="container px-4 px-lg-5">
-			<a href="main">
-				  <img src="resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
+			<a href="/main">
+				  <img src="/resources/assets/img/logo.png" class="navbar-brand" style="width: 120px; height: 80px;">
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -43,15 +43,15 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					
-					<li class="nav-item"><a class="nav-link" href="main">공지사항</a></li>
+					<li class="nav-item"><a class="nav-link" href="/boards">공지사항</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
@@ -68,13 +68,13 @@
 					%>
 					<!-- 로그인 상태일 때 -->
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="logout">로그아웃</a></li>
+						href="/logout">로그아웃</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="mypageView">마이페이지</a></li>
+						href="/mypage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./OrderCheckView.do">주문조회</a></li>
+						href="/orderCheck">주문조회</a></li>
 					<li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4"
-						href="./CartView.do">장바구니 <span
+						href="/cart">장바구니 <span
 							class="badge bg-dark text-white ms-1 rounded-pill">0</span></a></li>
 					<%
 						}
@@ -86,11 +86,11 @@
 
 	<!-- Header -->
 	<header class="bg-dark py-5"
-		style="background-image: url('assets/img/home-bg.jpg')">
+		style="background-image: url('/resources/assets/img/home-bg.jpg')">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-black">
-				<h1 class="display-4 fw-bolder">마이 페이지</h1>
-				<p class="lead fw-normal text-black-50 mb-0">최근 주문 내역</p>
+				<h1 class="display-4 fw-bolder">회원정보 수정</h1>
+				<p class="lead fw-normal text-black-50 mb-0">정보수정 페이지</p>
 			</div>
 		</div>
 	</header>
@@ -128,9 +128,9 @@
 					<div class="mt-4">
 						<h4 class="list-group-item fw-bolder">회원정보</h4>
 						<div class="list-group">
-							<a href="memberUpdate" class="list-group-item list-group-item-action border-0">-회원정보변경</a> 
-								<a href="memberDeleteView"class="list-group-item list-group-item-action border-0">-회원탈퇴</a>
-								 <a href="#" class="list-group-item list-group-item-action border-0">-배송지수정</a>
+							<a href="/member/edit" class="list-group-item list-group-item-action border-0">-회원정보변경</a> 
+								<a href="/member/delete"class="list-group-item list-group-item-action border-0">-회원탈퇴</a>
+								
 						</div>
 					</div>
 				</div>

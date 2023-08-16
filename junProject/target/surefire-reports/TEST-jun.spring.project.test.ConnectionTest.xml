@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="jun.spring.project.test.ConnectionTest" time="1.36" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="MS949"/>
+    <property name="java.class.path" value="C:\project_final_workspace\junProject\target\test-classes;C:\project_final_workspace\junProject\target\classes;C:\repository\org\springframework\spring-context\4.3.18.RELEASE\spring-context-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-aop\4.3.18.RELEASE\spring-aop-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-beans\4.3.18.RELEASE\spring-beans-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-core\4.3.18.RELEASE\spring-core-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-expression\4.3.18.RELEASE\spring-expression-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-webmvc\4.3.18.RELEASE\spring-webmvc-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-web\4.3.18.RELEASE\spring-web-4.3.18.RELEASE.jar;C:\repository\org\bgee\log4jdbc-log4j2\log4jdbc-log4j2-jdbc4.1\1.16\log4jdbc-log4j2-jdbc4.1-1.16.jar;C:\repository\org\aspectj\aspectjrt\1.9.6\aspectjrt-1.9.6.jar;C:\repository\org\slf4j\slf4j-api\1.6.6\slf4j-api-1.6.6.jar;C:\repository\org\slf4j\jcl-over-slf4j\1.6.6\jcl-over-slf4j-1.6.6.jar;C:\repository\org\slf4j\slf4j-log4j12\1.6.6\slf4j-log4j12-1.6.6.jar;C:\repository\org\mybatis\mybatis\3.4.6\mybatis-3.4.6.jar;C:\repository\org\mybatis\mybatis-spring\1.3.2\mybatis-spring-1.3.2.jar;C:\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\repository\org\springframework\spring-jdbc\4.3.18.RELEASE\spring-jdbc-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-tx\4.3.18.RELEASE\spring-tx-4.3.18.RELEASE.jar;C:\repository\com\oracle\database\jdbc\ojdbc8\21.1.0.0\ojdbc8-21.1.0.0.jar;C:\repository\com\zaxxer\HikariCP\3.3.1\HikariCP-3.3.1.jar;C:\repository\cglib\cglib\3.3.0\cglib-3.3.0.jar;C:\repository\org\ow2\asm\asm\7.1\asm-7.1.jar;C:\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\repository\commons-fileupload\commons-fileupload\1.3.3\commons-fileupload-1.3.3.jar;C:\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;C:\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\repository\net\coobird\thumbnailator\0.4.14\thumbnailator-0.4.14.jar;C:\repository\org\springframework\security\spring-security-web\4.2.3.RELEASE\spring-security-web-4.2.3.RELEASE.jar;C:\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\repository\org\springframework\security\spring-security-core\4.2.3.RELEASE\spring-security-core-4.2.3.RELEASE.jar;C:\repository\org\springframework\security\spring-security-config\4.2.3.RELEASE\spring-security-config-4.2.3.RELEASE.jar;C:\repository\javax\mail\javax.mail-api\1.6.2\javax.mail-api-1.6.2.jar;C:\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\repository\org\springframework\spring-context-support\4.3.18.RELEASE\spring-context-support-4.3.18.RELEASE.jar;C:\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\repository\org\springframework\spring-test\4.3.18.RELEASE\spring-test-4.3.18.RELEASE.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Seoul"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="KR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_361\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\sungj\AppData\Local\Temp\surefire4880331728315628865\surefirebooter-20230718095120961_3.jar C:\Users\sungj\AppData\Local\Temp\surefire4880331728315628865 2023-07-18T09-51-20_824-jvmRun1 surefire-20230718095120961_1tmp surefire_0-20230718095120961_2tmp"/>
+    <property name="surefire.test.class.path" value="C:\project_final_workspace\junProject\target\test-classes;C:\project_final_workspace\junProject\target\classes;C:\repository\org\springframework\spring-context\4.3.18.RELEASE\spring-context-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-aop\4.3.18.RELEASE\spring-aop-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-beans\4.3.18.RELEASE\spring-beans-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-core\4.3.18.RELEASE\spring-core-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-expression\4.3.18.RELEASE\spring-expression-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-webmvc\4.3.18.RELEASE\spring-webmvc-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-web\4.3.18.RELEASE\spring-web-4.3.18.RELEASE.jar;C:\repository\org\bgee\log4jdbc-log4j2\log4jdbc-log4j2-jdbc4.1\1.16\log4jdbc-log4j2-jdbc4.1-1.16.jar;C:\repository\org\aspectj\aspectjrt\1.9.6\aspectjrt-1.9.6.jar;C:\repository\org\slf4j\slf4j-api\1.6.6\slf4j-api-1.6.6.jar;C:\repository\org\slf4j\jcl-over-slf4j\1.6.6\jcl-over-slf4j-1.6.6.jar;C:\repository\org\slf4j\slf4j-log4j12\1.6.6\slf4j-log4j12-1.6.6.jar;C:\repository\org\mybatis\mybatis\3.4.6\mybatis-3.4.6.jar;C:\repository\org\mybatis\mybatis-spring\1.3.2\mybatis-spring-1.3.2.jar;C:\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\repository\org\springframework\spring-jdbc\4.3.18.RELEASE\spring-jdbc-4.3.18.RELEASE.jar;C:\repository\org\springframework\spring-tx\4.3.18.RELEASE\spring-tx-4.3.18.RELEASE.jar;C:\repository\com\oracle\database\jdbc\ojdbc8\21.1.0.0\ojdbc8-21.1.0.0.jar;C:\repository\com\zaxxer\HikariCP\3.3.1\HikariCP-3.3.1.jar;C:\repository\cglib\cglib\3.3.0\cglib-3.3.0.jar;C:\repository\org\ow2\asm\asm\7.1\asm-7.1.jar;C:\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\repository\commons-fileupload\commons-fileupload\1.3.3\commons-fileupload-1.3.3.jar;C:\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;C:\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\repository\net\coobird\thumbnailator\0.4.14\thumbnailator-0.4.14.jar;C:\repository\org\springframework\security\spring-security-web\4.2.3.RELEASE\spring-security-web-4.2.3.RELEASE.jar;C:\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\repository\org\springframework\security\spring-security-core\4.2.3.RELEASE\spring-security-core-4.2.3.RELEASE.jar;C:\repository\org\springframework\security\spring-security-config\4.2.3.RELEASE\spring-security-config-4.2.3.RELEASE.jar;C:\repository\javax\mail\javax.mail-api\1.6.2\javax.mail-api-1.6.2.jar;C:\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\repository\org\springframework\spring-context-support\4.3.18.RELEASE\spring-context-support-4.3.18.RELEASE.jar;C:\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\repository\org\springframework\spring-test\4.3.18.RELEASE\spring-test-4.3.18.RELEASE.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\sungj"/>
+    <property name="user.language" value="ko"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_361\jre"/>
+    <property name="basedir" value="C:\project_final_workspace\junProject"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\sungj\AppData\Local\Temp\surefire4880331728315628865\surefirebooter-20230718095120961_3.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_361\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_361\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_361\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_361\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_361\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_361\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_361\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_361-b09"/>
+    <property name="user.name" value="sungj"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_361\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="MS949"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\sungj\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_361"/>
+    <property name="user.dir" value="C:\project_final_workspace\junProject"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_361\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_361/bin/server;C:/Program Files/Java/jre1.8.0_361/bin;C:/Program Files/Java/jre1.8.0_361/lib/amd64;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;c:\program files (x86)\razer chroma sdk\bin;c:\program files\razer chroma sdk\bin;c:\program files (x86)\razer\chromabroadcast\bin;c:\program files\razer\chromabroadcast\bin;c:\program files (x86)\common files\intel\shared libraries\redist\intel64\compiler;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\nvidia corporation\nvidia nvdlisr;c:\windows\system32\config\systemprofile\appdata\local\microsoft\windowsapps;c:\users\sungj\appdata\local\microsoft\windowsapps;c:\program files\bandizip\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\ffmpeg essentials_build\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\apache-tomcat-9.0.75\bin;C:\apache-maven-3.9.2\bin;C:\Program Files\Git\cmd;C:\anaconda3;C:\anaconda3\Library\mingw-w64\bin;C:\anaconda3\Library\usr\bin;C:\anaconda3\Library\bin;C:\anaconda3\Scripts;C:\Users\sungj\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\sts-bundle\sts-3.9.11.RELEASE;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.361-b09"/>
+    <property name="java.specification.maintenance.version" value="4"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_361\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="test" classname="jun.spring.project.test.ConnectionTest" time="0.186">
+    <system-out><![CDATA[DEBUG: org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+DEBUG: org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [jun.spring.project.test.ConnectionTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+DEBUG: org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@1e6d1014 declaringClass = 'jun.spring.project.test.ConnectionTest', classes = '{}', locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+DEBUG: org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.context.support.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [jun.spring.project.test.ConnectionTest]: using defaults.
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@371a67ec, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5ed828d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@50d0686, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a3d45bd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1e7c7811, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@77ec78b9]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@52f759d7 testClass = ConnectionTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [jun.spring.project.test.ConnectionTest]
+DEBUG: org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@52f759d7 testClass = ConnectionTest, testInstance = jun.spring.project.test.ConnectionTest@23fe1d71, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]].
+DEBUG: org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+DEBUG: org.springframework.test.context.support.AbstractGenericContextLoader - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@4cf4d528: startup date [Tue Jul 18 09:51:21 KST 2023]; root of context hierarchy
+INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+DEBUG: org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG: com.zaxxer.hikari.HikariConfig - Driver class net.sf.log4jdbc.sql.jdbcapi.DriverSpy found in Thread context class loader sun.misc.Launcher$AppClassLoader@42a57993
+DEBUG: log4jdbc.debug - log4jdbc-logj2 properties initialization...
+DEBUG: log4jdbc.debug - Using logger: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+DEBUG: log4jdbc.debug - x log4jdbc.debug.stack.prefix is not defined
+DEBUG: log4jdbc.debug - x log4jdbc.sqltiming.warn.threshold is not defined
+DEBUG: log4jdbc.debug - x log4jdbc.sqltiming.error.threshold is not defined
+DEBUG: log4jdbc.debug - x log4jdbc.dump.booleanastruefalse is not defined (using default value false)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.maxlinelength is not defined (using default of 90)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.fulldebugstacktrace is not defined (using default value false)
+DEBUG: log4jdbc.debug - x log4jdbc.statement.warn is not defined (using default value false)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.select is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.insert is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.update is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.delete is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.create is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.dump.sql.addsemicolon is not defined (using default value false)
+DEBUG: log4jdbc.debug - x log4jdbc.auto.load.popular.drivers is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.drivers is not defined
+DEBUG: log4jdbc.debug - x log4jdbc.trim.sql is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.trim.sql.extrablanklines is not defined (using default value true)
+DEBUG: log4jdbc.debug - x log4jdbc.suppress.generated.keys.exception is not defined (using default value false)
+DEBUG: log4jdbc.debug - log4jdbc-logj2 properties initialization done.
+DEBUG: log4jdbc.debug - DriverSpy intialization...
+DEBUG: log4jdbc.debug -   FOUND DRIVER oracle.jdbc.OracleDriver
+DEBUG: log4jdbc.debug -   FOUND DRIVER oracle.jdbc.driver.OracleDriver
+DEBUG: log4jdbc.debug - DriverSpy intialization done.
+DEBUG: org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper - Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG: org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [configuration/config.xml]'
+DEBUG: org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\project_final_workspace\junProject\target\classes\mapper\mapper.xml]'
+DEBUG: org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Storing ApplicationContext in cache under key [[MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+DEBUG: org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2bd2b28e size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@52f759d7 testClass = ConnectionTest, testInstance = jun.spring.project.test.ConnectionTest@23fe1d71, testMethod = test@ConnectionTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+DEBUG: com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+DEBUG: com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+DEBUG: com.zaxxer.hikari.HikariConfig - autoCommit......................true
+DEBUG: com.zaxxer.hikari.HikariConfig - catalog.........................none
+DEBUG: com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+DEBUG: com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+DEBUG: com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+DEBUG: com.zaxxer.hikari.HikariConfig - dataSource......................none
+DEBUG: com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+DEBUG: com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+DEBUG: com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+DEBUG: com.zaxxer.hikari.HikariConfig - driverClassName................."net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+DEBUG: com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+DEBUG: com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+DEBUG: com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+DEBUG: com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+DEBUG: com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+DEBUG: com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521:xe
+DEBUG: com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+DEBUG: com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+DEBUG: com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+DEBUG: com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+DEBUG: com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+DEBUG: com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+DEBUG: com.zaxxer.hikari.HikariConfig - password........................<masked>
+DEBUG: com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+DEBUG: com.zaxxer.hikari.HikariConfig - readOnly........................false
+DEBUG: com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+DEBUG: com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+DEBUG: com.zaxxer.hikari.HikariConfig - schema..........................none
+DEBUG: com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+DEBUG: com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+DEBUG: com.zaxxer.hikari.HikariConfig - username........................"jun_jdbc"
+DEBUG: com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+INFO : com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO : jdbc.connection - 1. Connection opened  com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+DEBUG: jdbc.connection - open connections:  1 (1)
+DEBUG: jdbc.audit - 1. Connection.new Connection returned   com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+DEBUG: jdbc.audit - 1. Connection.getNetworkTimeout() returned 0  com.zaxxer.hikari.pool.PoolBase.getAndSetNetworkTimeout(PoolBase.java:518)
+DEBUG: jdbc.audit - 1. Connection.isReadOnly() returned false  com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:394)
+DEBUG: jdbc.audit - 1. Connection.getAutoCommit() returned true  com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:398)
+DEBUG: jdbc.audit - 1. Connection.isValid(1) returned true  com.zaxxer.hikari.pool.PoolBase.checkValidationSupport(PoolBase.java:450)
+DEBUG: jdbc.audit - 1. Connection.getTransactionIsolation() returned 2  com.zaxxer.hikari.pool.PoolBase.checkDefaultIsolation(PoolBase.java:471)
+DEBUG: com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@b91d8c4
+INFO : com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO : jun.spring.project.test.ConnectionTest - 확인 HikariProxyConnection@1058650291 wrapping net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@b91d8c4
+DEBUG: org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - After test method: context [DefaultTestContext@52f759d7 testClass = ConnectionTest, testInstance = jun.spring.project.test.ConnectionTest@23fe1d71, testMethod = test@ConnectionTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7cbd213e testClass = ConnectionTest, locations = '{file:src/main/webapp/WEB-INF/spring/root-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+]]></system-out>
+  </testcase>
+</testsuite>

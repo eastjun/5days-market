@@ -50,15 +50,15 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					
-					<li class="nav-item"><a class="nav-link" href="boardSelectAll">공지사항</a></li>
+					<li class="nav-item"><a class="nav-link" href="/boards">공지사항</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdown" href="#!"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">상품목록</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="goodsList">모든 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">모든 상품</a></li>
 							<li><hr class="dropdown-divider" /></li>
-							<li><a class="dropdown-item" href="goodsList">인기 상품</a></li>
-							<li><a class="dropdown-item" href="goodsList">새로 나온 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">인기 상품</a></li>
+							<li><a class="dropdown-item" href="/goods">새로 나온 상품</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -105,13 +105,13 @@
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 mt-5">
 			<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
-				<c:forEach var="goods" items="${goodsList}" begin="0" end="5"> 
+				<c:forEach var="goods" items="${goods}" begin="0" end="5"> 
 				<div class="col mb-5">
 					<div class="card h-100">
 					<div class="badge bg-dark text-white position-absolute"
 							style="top: 0.5rem; right: 0.5rem">Sale</div>
 						<!-- Product image-->
-						<img class="card-img-top" src="/project/resources/upload/${goods.image}" alt="..." />
+						<img class="card-img-top" src="/resources/upload/${goods.image}" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
@@ -132,7 +132,7 @@
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="goodsSelect?goodsid=${goods.goodsid}">상세 보기</a>
+								<a class="btn btn-outline-dark mt-auto" href="goods/${goods.goodsid}">상세 보기</a>
 							</div>
 						</div>
 					</div>

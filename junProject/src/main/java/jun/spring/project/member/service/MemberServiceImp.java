@@ -135,10 +135,10 @@ public class MemberServiceImp implements MemberService{
 	public boolean memberDelete(MemberDTO memberDTO) {
 		 logger.info("삭제 확인 --"+memberDTO);
 		 String userid= memberDTO.getUserid();
-		 String password=memberDTO.getPassword();
+		 String password=memberDTO.getPassword(); 
 		 String realpassword=memberDAOImp.memberSelect(userid).getPassword();
 		 
-		 if (password.equals(realpassword)) {
+		 if (bCryptPasswordEncoder.matches(password, realpassword)) {
 			 memberDAOImp.memberDelete(userid);
 			 return true;
 		}
@@ -159,7 +159,7 @@ public class MemberServiceImp implements MemberService{
 			memberDAOImp.savePasswordToken(memberDTO);
 			memberDTO.setPasswordResetTokenExpiry(new Date(System.currentTimeMillis() + 5*60*1000)); 
 			logger.info("토큰 저장 확인 ---" + memberDTO);
-			String resetUrl = "http://localhost:8090/project/resetpassword?token=" + token;
+			String resetUrl = "http://localhost:8090/resetpassword?token=" + token;
 			
 			SimpleMailMessage message = new SimpleMailMessage();
 			message.setTo(email);
