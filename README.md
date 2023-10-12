@@ -26,9 +26,9 @@
 
 * WAS : Apache Tomcat 9.0
 
-* Front-end : HTML5 / CSS / javascript / jQuery 
+* Front-end : HTML5 / CSS / javascript / jQuery / JSP / JSTL / AJAX
 
-* Back-end : JDK 1.8 / JSP / JSTL / Mybatis / AJAX / JSON
+* Back-end : JDK 1.8 / Mybatic/ JSON
 
 * Developer Tools : STS 3.9.12 / eXERD / SqlDeveloper
 
